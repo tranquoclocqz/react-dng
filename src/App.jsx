@@ -1,5 +1,5 @@
-import router from "./pages/routes";
-import Home from "./pages/Home";
+import router from "./Pages/routes";
+import Home from "./Pages/Home";
 import { Routes, Route } from "react-router-dom";
 import React, { Fragment, Suspense } from "react";
 import Header from "./Layouts/Header/Header";
