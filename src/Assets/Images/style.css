@@ -1,0 +1,600 @@
+body {
+    font-size: 13px;
+}
+
+#reportrange {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 180px;
+}
+
+#reportrange_invoices {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+.table-vcenter td {
+    vertical-align: inherit !important;
+}
+
+button.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#change-store {
+    display: inline-block;
+    width: 160px;
+    margin: 10px 0;
+    border-radius: 3px;
+    border: none;
+    height: 30px;
+    padding-left: 5px;
+}
+
+.store-name {
+    color: white;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.label-store {
+    background: #ccc;
+    padding: 3px 6px;
+    margin-right: 4px;
+    border-radius: 5px;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-package .select2-container {
+    width: calc(100% - 158px) !important;
+    display: inline-block;
+    margin: 0 10px;
+    float: left;
+}
+
+.form-inline .select2-container {
+    min-width: 100px;
+    max-width: 320px;
+}
+
+.select-quantity {
+    width: 100px !important;
+    float: left;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    color: #333;
+}
+
+.form-inline input[name="phone"] {
+    width: 120px;
+}
+
+textarea.textarea {
+    width: 100%;
+    height: 150px;
+    font-size: 14px;
+    line-height: 18px;
+    border: 1px solid #dddddd;
+    padding: 10px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #ccccccd4;
+}
+
+.btn-verify {
+    cursor: pointer;
+}
+
+.verify {
+    position: relative;
+}
+
+.sublinks {
+    position: absolute;
+    top: 31px;
+    left: 0;
+    z-index: 999;
+}
+
+.list-group-item {
+    padding: 5px 10px;
+}
+
+.tablelte-excel .dataTables_empty {
+    display: none;
+}
+
+
+/*luyen add*/
+
+.starrating>input {
+    display: none;
+}
+
+
+/* Remove radio buttons */
+
+.starrating>label:before {
+    content: "\f005";
+    /* Star */
+    margin: 2px;
+    font-size: 1.5em;
+    font-family: FontAwesome;
+    display: inline-block;
+}
+
+.starrating>label {
+    color: #222222;
+    /* Start color when not clicked */
+}
+
+.starrating>input:checked~label {
+    color: #ffca08;
+}
+
+
+/* Set yellow color when star checked */
+
+.starrating>input:hover~label {
+    color: #ffca08;
+}
+
+
+/* Set yellow color when star hover */
+
+.loading {
+    position: relative;
+}
+
+.loading::before {
+    content: "";
+    position: absolute;
+    z-index: 999;
+    background-image: url(../../assets/images/loading.svg);
+    background-size: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Smart Wizard */
+
+.wizard .anchor {
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.wizard .anchor:after {
+    content: " ";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    background: #d5d5d5;
+    z-index: 1;
+}
+
+.wizard .anchor li {
+    float: left;
+    display: block;
+}
+
+.wizard .anchor li a {
+    font-size: 14px;
+    color: #656d78;
+    text-decoration: none;
+    display: block;
+    line-height: 18px;
+    padding: 10px 20px 15px 0px;
+    position: relative;
+}
+
+.wizard .anchor li a .stepNumber {
+    display: none;
+}
+
+.wizard .anchor li a .stepDesc {
+    font-weight: 400;
+}
+
+.wizard .anchor li a .stepDesc small {
+    color: #999;
+    font-weight: 300;
+}
+
+.wizard .anchor li a:before {
+    content: " ";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #d5d5d5;
+    z-index: 2;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+.wizard .anchor li a:after {
+    content: " ";
+    position: absolute;
+    bottom: -10px;
+    left: 0px;
+    width: 22px;
+    height: 22px;
+    -moz-border-radius: 20%;
+    -webkit-border-radius: 20%;
+    border-radius: 20%;
+    background: #fff;
+    border: 3px solid #d5d5d5;
+    z-index: 3;
+    text-align: center;
+    line-height: 17px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+    color: #ddd;
+}
+
+.wizard .anchor li a.done:after {
+    border-color: #95b75d;
+    content: "\f00c";
+    font-family: FontAwesome;
+    color: #95b75d;
+    font-size: 10px;
+}
+
+.wizard .anchor li a.done:before {
+    background: #95b75d;
+}
+
+.wizard .anchor li a.error:after {
+    border-color: #e04b4a;
+    content: "\f00d";
+    font-family: FontAwesome;
+    color: #e04b4a;
+    font-size: 10px;
+}
+
+.wizard .anchor li a.error:before {
+    background: #e04b4a;
+}
+
+.wizard .anchor li a.selected:after {
+    border-color: #57a9a8;
+    content: "\f0da";
+    font-family: FontAwesome;
+    color: #57a9a8;
+    font-size: 13px;
+    padding-left: 2px;
+}
+
+.wizard .anchor li a.selected:before {
+    background: #57a9a8;
+}
+
+.wizard .stepContainer,
+.wizard .actionBar {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.wizard .actionBar {
+    margin-top: 20px;
+}
+
+.wizard .actionBar .btn.pull-right {
+    margin-left: 5px;
+}
+
+.wizard .actionBar .btn-primary {
+    display: none;
+}
+
+.wizard .actionBar .loader {
+    display: none;
+}
+
+.wizard .anchor.steps_1 li {
+    width: 100%;
+}
+
+.wizard .anchor.steps_2 li {
+    width: 50%;
+}
+
+.wizard .anchor.steps_3 li {
+    width: 33.333333%;
+}
+
+.wizard .anchor.steps_4 li {
+    width: 25%;
+}
+
+.wizard .anchor.steps_5 li {
+    width: 20%;
+}
+
+.wizard .anchor.steps_6 li {
+    width: 16.666666%;
+}
+
+.wizard .anchor.steps_7 li {
+    width: 14.285714%;
+}
+
+.wizard .anchor.steps_8 li {
+    width: 12.5%;
+}
+
+.box-hide {
+    opacity: 0;
+}
+
+.add_modal .form-group {
+    margin-bottom: 6px !important;
+}
+
+.add_modal #appointment_app .box-time span {
+    padding: 2px;
+    height: 38px;
+    width: calc(11.40% - 4px);
+}
+
+.add_modal .created_user {
+    display: none;
+}
+
+.add_modal .modal-body {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.add_modal .modal-header {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.add_modal #appointment_app .user-box>div span {
+    width: 50px;
+    height: 50px;
+}
+
+.add_modal #appointment_app .user-box {
+    height: 200px;
+}
+
+.add_modal .modal-header .close {
+    margin-top: -8px;
+}
+
+.add_modal .title-ktv {
+    top: -4px !important;
+}
+
+.add_modal .total_app {
+    top: -13px !important;
+}
+
+.add_modal #history .modal-dialog {
+    max-width: 500px;
+}
+
+
+/* END Smart Wizard */
+
+
+/* Vũ custom style  */
+
+.custom-dropdown {
+    position: relative;
+}
+
+.dropdown-area {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 1000;
+    min-width: 160px;
+    padding: 5px;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s all ease-in-out;
+}
+
+.active .dropdown-area {
+    opacity: 1;
+    visibility: unset;
+}
+
+
+/* width */
+  .scroll-b::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .scroll-b::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  .scroll-b::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  .scroll-b::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+/* END Vũ's CS */
+
+
+/* upload css */
+#drag_file .upload-area input{
+    display: none
+}
+
+#drag_file .wrap-drop-img .upload-area {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: auto;
+    border: 1px dashed #ccc;
+    border-radius: 20px;
+    min-height: 150px;
+    position: relative;
+}
+
+#drag_file .wrap-drop-img .upload-area:hover {
+    cursor: pointer
+}
+
+#drag_file .wrap-drop-img .upload-area h3 {
+    text-align: center;
+    font-weight: normal;
+    font-family: sans-serif;
+    color: darkslategray;
+    padding-top: 20px
+}
+
+#drag_file .upload-area {
+    border: 2px dashed #ccc;
+    width: 480px;
+    font-family: sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+#drag_file .wrap-drop-exel .upload-area2 {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: auto;
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    min-height: 150px
+}
+
+#drag_file .wrap-drop-exel .upload-area2:hover {
+    cursor: pointer
+}
+
+#drag_file .wrap-drop-exel .upload-area2 h3 {
+    text-align: center;
+    font-weight: normal;
+    font-family: sans-serif;
+    color: darkslategray;
+    padding-top: 20px
+}
+
+#drag_file .upload-area {
+    border: 2px dashed #ccc;
+    width: 480px;
+    font-family: sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+#drag_file .upload-area2 {
+    border: 2px dashed #ccc;
+    width: 480px;
+    font-family: sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+#drag_file #gallery {
+    padding-bottom: 10px;
+    text-align: center;
+    background: #fafafa;
+    border-radius: 5px;
+}
+
+#drag_file #gallery .item-image {
+    margin-top: 10px;
+    text-align: center;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+#drag_file #gallery img {
+    width: 145px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}
+
+#drag_file .lb-file {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+#drag_file .wrap-drop-img {
+    display: flex;
+    justify-content: space-around;
+}
+
+#drag_file .note_title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+}

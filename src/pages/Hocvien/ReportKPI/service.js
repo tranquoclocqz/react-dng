@@ -1,4 +1,4 @@
-import axiosClient from '../../../api/axiosClient';
+import axiosClient from "../../../Api/axiosClient"
 const service = {
     getReportKPI: (params) => {
         return axiosClient.post('marketing_offlines/get_reports_marketing', { params });

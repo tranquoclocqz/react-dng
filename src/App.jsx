@@ -1,31 +1,34 @@
 import router from "./pages/routes";
-import "./App.css";
 import Home from "./pages/Home";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import React from "react";
+import { Routes, Route } from "react-router-dom";
+import React, { Fragment, Suspense } from "react";
+import Header from "./Layouts/Header/Header";
+import Footer from "./Layouts/Footer/Footer";
+import Sidebar from "./Layouts/Sidebar/Sidebar";
 function App() {
   return (
-    <BrowserRouter>
-      <Link to="/">Home</Link> 
-      <Link to="report-kpi">kpi-report</Link>
-      <Routes>
-        <Route index path="/" element={<Home />} />
-        {router.map((item) => {
-          const Com = React.lazy(() => import(`./pages/${item.component}`));
-          return (
-            <Route
-              key={item.path}
-              path={item.path}
-              element={
-                <React.Suspense fallback={<>...</>}>
-                  <Com/>
-                </React.Suspense>
-              }
-            />
-          );
-        })}
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Header />
+      <Sidebar />
+      <Fragment>
+        <Suspense fallback={<div className="loading-lazy" />}>
+          <div className="content-wrapper">
+            <Routes>
+              <Route index path="/" element={<Home />} />
+              {router.map((item) => {
+                const Com = React.lazy(() =>
+                  import(`./pages/${item.component}`)
+                );
+                return (
+                  <Route key={item.path} path={item.path} element={<Com />} />
+                );
+              })}
+            </Routes>
+          </div>
+        </Suspense>
+      </Fragment>
+      <Footer />
+    </>
   );
 }
 

@@ -1,0 +1,291 @@
+const $ = jQuery;
+const _url = 'promotion/';
+$('input[type=radio]').click(function (e) {
+    if (e.ctrlKey || e.metaKey) {
+        $(this).prop('checked', false);
+    }
+});
+app.controller('promotionCtl', function ($scope, $http, $compile, $sce) {
+
+    var pi = $scope.pagingInfo = {
+        itemsPerPage: 30,
+        offset: 0,
+        to: 0,
+        currentPage: 1,
+        totalPage: 1,
+        total: 0
+    };
+
+    $scope.init = () => {
+        $scope.promotion = {};
+        $scope.filter = {};
+        $scope.filter.discount_type = "0";
+
+        $scope.filter.type = "0";
+
+        $scope.filter.limit = $scope.pagingInfo.itemsPerPage;
+        $scope.filter.offset = $scope.pagingInfo.offset;
+
+        jQuery(".btn_datepicker").datepicker({
+            format: "dd-mm-yyyy",
+            autoclose: true,
+            weekStart: 1,
+            todayBtn: "linked",
+            language: "vi",
+            container: '#addNewModal'
+
+        });
+
+        $scope.getList();
+
+        $scope.getPromotionType();
+        $scope.getProducts();
+    };
+
+    $scope.getPromotionType = () => {
+        let res = getApi(_url + 'get_promotion_type').then(res => {
+            if (checkApi(res)) {
+                $scope.promotionTypes = res.data;
+            }
+        });
+    }
+
+
+    $scope.searchWithType = (type) => {
+        let filter = angular.copy($scope.filter),
+            key = filter.key;
+        if (key.length < 3) return;
+
+        if ($scope.filter_timer) {
+            clearTimeout($scope.filter_timer);
+        }
+
+        $scope.filter_timer = setTimeout(() => {
+            if (type == 'product') {
+                $scope.searchProduct();
+            } else if (type == 'service') {
+                $scope.searchService();
+            } else { // package
+                $scope.searchPackage();
+            }
+        }, 350);
+    }
+    $scope.searchProduct = async () => {
+        var key = $scope.filter.key;
+        if (key.length < 3) return true;
+
+        setTimeout(() => {
+            $scope.filter.load = true;
+            $scope.$apply();
+        }, 0);
+        var res = await getApi('product/search_product_retail_by_key?key=' + key);
+        if (checkApi(res)) {
+            $scope.products = res.data;
+        }
+        $scope.filter.show_rs = true;
+        $scope.filter.load = false;
+        $scope.$digest();
+    }
+
+    $scope.searchService = async () => {
+        var key = $scope.filter.key;
+        if (key.length < 3) return true;
+
+        setTimeout(() => {
+            $scope.filter.load = true;
+            $scope.$apply();
+        }, 0);
+
+        var res = await getApi('service/search_service_by_key?key=' + key);
+        if (checkApi(res)) {
+            $scope.services = res.data;
+        }
+        $scope.filter.show_rs = true;
+        $scope.filter.load = false;
+        $scope.$digest();
+    }
+
+    $scope.searchPackage = async () => {
+        var key = $scope.filter.key;
+        if (key.length < 3) return true;
+
+        setTimeout(() => {
+            $scope.filter.load = true;
+            $scope.$apply();
+        }, 0);
+
+        var res = await getApi('package/search_package_by_key?key=' + key);
+        if (checkApi(res)) {
+            $scope.packages = res.data;
+        }
+        $scope.filter.show_rs = true;
+        $scope.filter.load = false;
+        $scope.$digest();
+    }
+
+    $scope.openBox = (tus) => {
+        $scope.open = tus;
+    }
+
+
+    $scope.addVoucher = (value = null) => {
+        $scope.resetInsert();
+        console.log(value);
+        $('#addNewModal').modal('show');
+        if (value) {
+            $scope.voucher.id = value.id;
+            $scope.voucher.name = value.name;
+            setTimeout(() => {
+                jQuery(".btn_datepicker").datepicker({
+                    format: "dd-mm-yyyy",
+                    autoclose: true,
+                    weekStart: 1,
+                    todayBtn: "linked",
+                    language: "vi",
+                    container: '#addNewModal'
+                });
+            }, 10);
+
+        }
+        select2();
+    }
+
+    $scope.resetInsert = () => {
+        $scope.voucher = {};
+    }
+
+
+
+
+    $scope.getList = async () => {
+        LoaderBtn.activate('.filter-btn');
+
+        $('.page-loader').addClass("loading");
+
+        let res = await getApi(_url + 'list?filter=' + JSON.stringify($scope.filter));
+
+        if (checkApi(res)) {
+            $scope.lists = res.data.data;
+            $scope.pagingInfo.total = res.data.count;
+            $scope.pagingInfo.totalPage = Math.ceil(res.data.count / pi.itemsPerPage);
+        }
+        $('table').removeClass("loading");
+        $scope.$digest();
+        LoaderBtn.reset('.filter-btn');
+    }
+
+    $scope.chooseItemSearch = (name, item_rs) => {
+
+        if (!$scope.promotion[name]) {
+            $scope.promotion[name] = [];
+            $scope.promotion[name].push(
+                {
+                    id: item_rs.id,
+                    name: item_rs.name
+                }
+            );
+        } else {
+            var index = $scope.checkIsset(name, item_rs.id);
+            if (index > -1) {
+                $scope.promotion[name].splice(index, 1);
+            } else {
+                $scope.promotion[name].push(
+                    {
+                        id: item_rs.id,
+                        name: item_rs.name
+                    }
+                );
+            }
+
+        }
+        $scope.products = [];
+        $scope.services = [];
+        $scope.packages = [];
+
+        $scope.filter.key = "";
+    }
+
+    $scope.checkIsset = (name, id) => {
+
+        var index = -1;
+        $scope.promotion[name].forEach((element, e) => {
+            if (element.id == id) {
+                index = e;
+            }
+        });
+        return index;
+    }
+
+
+
+    $scope.insertVoucher = async () => {
+
+        let item = angular.copy($scope.voucher);
+
+        if (!item.name) {
+            showMessErr('Tên dịch vụ không được bỏ trống');
+            return;
+        }
+        // else if (!item.type) {
+        //     showMessErr('Vui lòng chọn loại voucher');
+        //     return;
+        // } else if (!item.date_start) {
+        //     showMessErr('Vui lòng chọn ngày bắt đầu');
+        //     return;
+        // } else if (!item.date_end) {
+        //     showMessErr('Vui lòng chọn ngày kết thúc');
+        //     return;
+        // } else if (!item.discount_type) {
+        //     showMessErr('Vui lòng chọn hình thức giảm giá');
+        //     return;
+        // } else if (!item.discount) {
+        //     showMessErr('Nhập số tiền được giảm giá theo hình thức');
+        //     return;
+        // }
+
+        LoaderBtn.activate('.add-save-btn');
+        // item.date_start = moment(item.date_start, 'DD-MM-YYYY').format('YYYY-MM-DD');
+        // item.date_end = moment(item.date_end, 'DD-MM-YYYY').format('YYYY-MM-DD');
+        let res = await postApi(_url + 'insertVoucher', item);
+
+        if (checkApi(res)) {
+            $scope.resetInsert();
+            //   $scope.sumbitGetAll();
+            $('#addNewModal').modal('hide');
+            $scope.go2Page(1);
+            showMessSuccess();
+            select2();
+        }
+        $scope.$digest();
+        LoaderBtn.reset('.add-save-btn');
+    }
+
+
+    $scope.go2Page = function (page) {
+        if (page < 0) return;
+        var pi = $scope.pagingInfo;
+        pi.currentPage = page;
+        pi.from = pi.offset = (pi.currentPage - 1) * pi.itemsPerPage;
+        $scope.filter.limit = $scope.pagingInfo.itemsPerPage;
+        $scope.filter.offset = ($scope.pagingInfo.currentPage - 1) * $scope.pagingInfo.itemsPerPage;
+        $scope.getList();
+        pi.to = pi.total < pi.itemsPerPage ? pi.total : pi.itemsPerPage
+    }
+
+    $scope.Previous = function (page) {
+        if (page - 1 > 0) $scope.go2Page(page - 1);
+        if (page - 1 == 0) $scope.go2Page(page);
+    }
+
+    $scope.getRange = function (paging) {
+        var max = paging.currentPage + 3;
+        var total = paging.totalPage + 1;
+        if (max > total) max = total;
+        var min = paging.currentPage - 2;
+        if (min <= 0) min = 1;
+        var tmp = [];
+        return _.range(min, max);
+    }
+
+});
+
