@@ -17,4 +17,4 @@ Chạy cmd bằng quyền Admin, gõ `nvm` để xem các lệnh.
 
 `nvm uninstall <version>` gỡ phiên bản `node` với `version`
 
-`nvm use <version>` chuyển đổi sang <version> đã cài
+`nvm use <version>` chuyển đổi sang `<version>` đã cài
