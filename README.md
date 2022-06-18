@@ -3,6 +3,9 @@
 
 Mỗi lần pull về xong hãy chạy lệnh `npm i` hoặc `npm install` để tải các `node_modules`
 
+`npm start` để chạy `http://localhost:3000`
+
+`npm build` để build ra product
 # NVM
 Sử dụng NVM để chuyển đổi giữa các phiên bản Nodejs trên cùng 1 máy
 Link tải https://github.com/coreybutler/nvm-windows/releases
