@@ -11,8 +11,30 @@ export default class Reports_v2 extends PureComponent {
       filter: {
         pg: {},
         channel: {},
+        campaigns: {},
       },
+      campaigns_search: "",
     };
+    this.setTextSearchCampaign = this.setTextSearchCampaign.bind(this);
+  }
+
+  setTextSearchCampaign(e) {
+    this.get_campaign(e.target.value);
+  }
+
+  get_campaign(key) {
+    axiosClient
+      .get("marketing_offlines/ajax_search_campaigns", {
+        key: key,
+      })
+      .then((response) => {
+        this.setState({    
+          ...this.state.filter,
+          campaigns: {
+            data: response.data.data,
+          }
+        });
+      });
   }
 
   componentDidMount() {
@@ -42,10 +64,21 @@ export default class Reports_v2 extends PureComponent {
           <div className="box-header box-filter">
             <form className="row">
               <div className="form-group col-sm-2 col-xs-6">
-                <input type="text" className="form-control" disabled/>
+                <input type="text" className="form-control" disabled />
               </div>
               <div className="form-group col-sm-3 col-xs-6">
-                <input type="text" className="form-control" />
+                <div className="loading_input po-r">
+                  <div className="search-content po-r">
+                    <i className="fa fa-search"></i>
+                    <input
+                      type="text"
+                      className="form-control input"
+                      placeholder="Nhập tên chương trình"
+                      onKeyUp={this.setTextSearchCampaign}
+                      onClick={this.setTextSearchCampaign}
+                    />
+                  </div>
+                </div>
               </div>
               <div className="form-group col-sm-2 col-xs-6">
                 <Select2 options={{ width: "100%" }}>
@@ -63,7 +96,16 @@ export default class Reports_v2 extends PureComponent {
                 </Select2>
               </div>
               <div className="form-group col-sm-2 col-xs-6">
-                <input type="text" className="form-control" />
+                <div className="loading_input po-r">
+                  <div className="search-content po-r">
+                    <i className="fa fa-search"></i>
+                    <input
+                      type="text"
+                      className="form-control input"
+                      placeholder="Nhập tên địa điểm"
+                    />
+                  </div>
+                </div>
               </div>
               <div className="form-group col-sm-2 col-xs-6">
                 <Select2 options={{ width: "100%" }}>
@@ -87,6 +129,9 @@ export default class Reports_v2 extends PureComponent {
               </div>
             </form>
           </div>
+        </div>
+        <div className="mgt-10 overview po-r text-center">
+          Vui lòng chọn chương trình cần xem thống kê
         </div>
       </>
     );
