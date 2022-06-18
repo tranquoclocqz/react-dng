@@ -1,0 +1,138 @@
+.border-example {
+    border-radius: 4px;
+    border: 1px solid #aaa;
+}
+
+.date-rp {
+    text-align: center;
+}
+
+.form-control select {
+    width: 100%;
+}
+
+.po-r {
+    position: relative;
+}
+
+.cur-p {
+    cursor: pointer;
+}
+
+.bg-total {
+    background-color: rgb(255, 199, 206) !important;
+}
+
+.table-bordered-invoice th,
+.table-bordered-invoice td {
+    border: 1px solid #d2d6de !important;
+}
+
+.table-hover>tbody>tr:hover>td {
+    background-color: #adadad;
+}
+
+.drop-cl {
+    position: absolute;
+    padding: 7px 5px 5px 5px;
+    margin: 2px 0 0;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    min-width: 150px;
+    z-index: 4;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+}
+
+.btn-close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.tb-scroll {
+    max-width: 100%;
+    max-height: 40vh;
+    overflow: auto;
+}
+
+.tb-scroll thead th {
+    position: sticky;
+    top: 0;
+    background-color: #d2d6de;
+}
+
+.tb-scroll table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td.active {
+    box-shadow: 0 2px 6px rgb(0 0 0 / 50%), inset 0 1px rgb(255 255 255 / 30%), inset 0 10px rgb(255 255 255 / 20%), inset 0 10px 20px rgb(255 255 255 / 25%), inset 0 -15px 30px rgb(0 0 0 / 30%);
+    -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 50%), inset 0 1px rgb(255 255 255 / 30%), inset 0 10px rgb(255 255 255 / 20%), inset 0 10px 20px rgb(255 255 255 / 25%), inset 0 -15px 30px rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header-table-manager {
+    min-width: 230px !important;
+    display: flex;
+    padding: 0;
+}
+
+.lh-58 {
+    line-height: 58px;
+}
+
+.lh-32 {
+    line-height: 32px;
+}
+
+.header-calendar-table {
+    padding: 0;
+    min-width: 42px;
+}
+
+.wid-100 {
+    width: 100% !important;
+}
+
+.m-height-40 {
+    min-height: 40vh;
+}
+
+.op-report {
+    opacity: 0;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.table-list>thead th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+.table-list>thead th:first-child {
+    left: 0;
+    z-index: 2;
+}
+
+.table-list>tbody>tr>td:first-child {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    background: white;
+    border-right: 1px solid #CCC;
+    z-index: 1;
+}
+
+.bt-5 {
+    margin: 0 0 5px 0;
+}

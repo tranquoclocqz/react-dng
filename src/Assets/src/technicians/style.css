@@ -1,0 +1,165 @@
+.table-tr {
+    display: flex;
+}
+
+td.s-name {
+    width: 40%;
+}
+
+.s-name.in-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    padding: 0;
+    line-height: 34px;
+    /* min-width: 200px;
+    max-width: 200px; */
+}
+
+
+/* td.s-group {
+    width: 35%;
+} */
+
+.dg-icon img {
+    width: 35px;
+    height: auto;
+}
+
+td.dg-icon {
+    width: 40px;
+}
+
+button.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.emoji-item {
+    width: 100px;
+    padding: 15px;
+    border: 2px solid transparent;
+    transition: .2s all linear;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.emoji-item:hover {
+    background: antiquewhite;
+}
+
+.emoji-item.active {
+    border-color: cadetblue;
+}
+
+.s-5 {
+    width: 5%;
+}
+
+.s-price {
+    width: 20%;
+}
+
+.s-discount {
+    width: 15%;
+}
+
+tr.tr-hover {
+    border-bottom: 2px solid #8080802e;
+}
+
+table.in-td td,
+table.in-td th {
+    border-top: none !important;
+}
+
+.be-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.filter-area {
+    padding: 30px 30px 15px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid green;
+    position: relative;
+}
+
+.sort-area {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+
+.no-item {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 15px;
+}
+
+th.col-id {
+    width: 150px;
+}
+
+th.col-name {
+    width: 200px;
+}
+
+.cancel-filter {
+    font-size: 20px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    color: green;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.created {
+    color: green;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.orientationchange-require {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+    padding: 0 50px;
+    text-align: center;
+}
+
+.orientationchange-require img {
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+@media screen and (max-width: 1300px) {
+    th.col-name {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 992) {}
+
+@media screen and (max-width: 768) {}

@@ -1,0 +1,89 @@
+.user-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.fl-left {
+    float: left;
+}
+
+.title-dropdown {
+    width: 95px;
+    cursor: pointer;
+    padding: 4px 15px;
+    border: 1px solid rgb(20, 20, 148);
+    border-radius: 5px;
+    color: rgb(20, 20, 148);
+    display: inline-block
+}
+
+.dropdown-menu {
+    left: unset;
+    right: 100%;
+    top: -13px;
+    background-color: #ECF0F5;
+}
+
+.dropdown-salary {
+    display: inline-block
+}
+
+.txt-green {
+    color: #00a65a;
+}
+.type-salary{
+    font-size: 16px;
+    margin-bottom: 2px;;
+}
+.cu-pointer {
+    cursor: pointer;
+}
+
+.op-report {
+    opacity: 0;
+}
+
+.pagination li {
+    cursor: pointer;
+}
+
+.td-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.tb-list-salary td span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+input[type=file] {
+    display: none;
+}
+#modal-send-message input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+}
+
+.txt-line-through{
+    text-decoration: line-through;
+}
+input[type='checkbox'] {
+    cursor: pointer;
+}
+.salary-group{
+    margin: 20px 30px;
+    background: #bfc3bf0d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 20%);
+}
+
+@media screen and (max-width: 767px) {
+    .salary-group{
+        margin: 20px 0px;
+    }
+}

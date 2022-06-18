@@ -3,8 +3,9 @@ import queryString from 'query-string';
 const axiosClient = axios.create({
     baseURL: 'http://localhost/crm-dng/',
     headers: {
-        'content-type': 'application/json',
+        'content-type': 'application/json'
     },
+    withCredentials: true,
     paramsSerializer: params => queryString.stringify(params),
 });
 // Handle token

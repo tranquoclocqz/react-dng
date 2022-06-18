@@ -1,0 +1,113 @@
+.box-salary-detail td:nth-child(1) {
+    text-align: center;
+    max-width: 90px;
+}
+
+.form-feedback {
+    margin: 20px 20px;
+    padding: 10px 10px;
+    box-shadow: 0 10px 20px 4px #98bdad5c;
+    border-radius: 6px;
+}
+
+@media screen and (max-width:767px) {
+    .form-feedback {
+        margin: 10px 10px;
+    }
+}
+
+.form-title-popup {
+    background: #367fa9;
+    color: #fff;
+}
+
+.note-feedback {
+    border: dashed 2px #c3c3c3;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.note-content {
+    padding: 5px;
+    background-color: #e8e8e8;
+    border-radius: 10px;
+}
+
+.note-content p {
+    color: #ec4969;
+    font-style: italic;
+}
+
+.box-salary-detail td:nth-child(1) {
+    text-align: center;
+    max-width: 90px;
+}
+
+.modal-title {
+    font-weight: 700;
+}
+
+.list-type {
+    display: flex;
+    flex-flow: wrap;
+    margin: 0 -7.5px;
+}
+
+.list-type .item-type.ng-scope {
+    width: 50%;
+    padding: 5px;
+}
+
+.list-type .item-detail {
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    height: 100%;
+    display: flex;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.list-type .item-detail.active {
+    box-shadow: rgb(0 117 255 / 20%) 0px 0px 4px 2px inset;
+}
+
+.list-type .item-detail input {
+    margin-right: 5px;
+}
+
+.font-w-initial {
+    font-weight: initial;
+}
+
+#modal_feedback_salary .avatar-in-table {
+    margin: 2px;
+}
+
+#modal_feedback_salary .avatar-in-table.mains {
+    border: 2px solid #0075ff;
+}
+
+.box-avt-handler {
+    position: relative;
+}
+
+.box-avt-handler:after {
+    position: absolute;
+    content: 'x';
+    top: -10px;
+    right: 0;
+    color: #d92c16;
+    pointer-events: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.pd-t-0 {
+    padding-top: 0;
+}

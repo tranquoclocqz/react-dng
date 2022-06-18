@@ -1,0 +1,239 @@
+@font-face {
+    font-family: Bold;
+    src: url(../dng_love/font/Nunito-Bold.ttf);
+}
+
+@font-face {
+    font-family: Regular;
+    src: url(../dng_love/font/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: Italic;
+    src: url(../dng_love/font/Nunito-Italic.ttf);
+}
+
+@font-face {
+    font-family: SemiBold;
+    src: url(../dng_love/font/Nunito-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: DancingRegular;
+    src: url(../dng_love/font/DancingScript-Regular.ttf);
+}
+
+@font-face {
+    font-family: DancingBold;
+    src: url(../dng_love/font/DancingScript-Bold.ttf);
+}
+
+body,
+html,
+.app-contain {
+    height: 100%;
+    font-family: Regular;
+    font-size: 14px;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bg-grey {
+    background: #f3f3f3;
+}
+
+.bg-white {
+    background: white;
+}
+
+.pd-15 {
+    padding: 15px;
+}
+
+.pdt-15 {
+    padding-top: 15px;
+}
+
+.pd-0 {
+    padding: 0;
+}
+
+.pd-5 {
+    padding: 5px;
+}
+
+.pbt-15 {
+    padding-bottom: 15px;
+}
+
+.po-r {
+    position: relative;
+}
+
+.po-a {
+    position: absolute;
+}
+
+.j-sb {
+    justify-content: space-between;
+}
+
+.mgr-5 {
+    margin-right: 5px;
+}
+
+.mgl-5 {
+    margin-left: 5px;
+}
+
+.mgt-10 {
+    margin-top: 10px;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+.mgt-15 {
+    margin-top: 15px;
+}
+
+.mgt-10 {
+    margin-top: 10px;
+}
+
+.code-icon {
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 20px;
+    background: #c71a50;
+    color: white;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.search-form {
+    background: white;
+    border: none;
+    height: 32px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-form input {
+    width: calc(100% - 46px);
+    border: none;
+    outline: none;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.shadow {
+    box-shadow: 0 3px 6px rgb(253 253 253 / 16%), 0 3px 6px rgb(107 107 107 / 23%) !important;
+}
+
+.banner-item {
+    border-radius: 35px;
+    overflow: hidden;
+}
+
+.outl {
+    width: calc(100% / 3);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.txt {
+    width: calc((100%/3)*2 - 4px);
+}
+
+.title {
+    font-family: Bold;
+    font-size: 15px;
+    color: #c71a50;
+}
+
+.stars {
+    color: #FFDF00;
+}
+
+.price {
+    color: green;
+    font-family: 'Bold';
+    font-size: 19px;
+}
+
+.pd-10 {
+    padding: 10px;
+}
+
+.content-2 {
+    border-radius: 30px;
+}
+
+.ser {
+    width: 30%;
+    background: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 35px;
+    margin-bottom: 10px;
+}
+
+.tde {
+    margin-top: 7px;
+    font-family: SemiBold;
+    color: #c71a50;
+}
+
+.outl img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.out-video {
+    position: fixed;
+    width: 90% !important;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    box-shadow: 0 3px 6px rgb(253 253 253 / 16%), 0 3px 6px rgb(107 107 107 / 23%) !important;
+    padding: 7px;
+    border-radius: 20px;
+    text-align: right;
+}
+
+.out-video video {
+    width: 100% !important;
+}
+
+.close-vd {
+    width: 40px;
+    height: 20px;
+    background: #c71a50;
+    color: white;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.message {
+    color: #c71a50;
+    padding: 10px;
+    font-family: 'Bold';
+}

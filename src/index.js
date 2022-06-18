@@ -9,14 +9,12 @@ import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <div className="main-wrapper skin-green">
-        <div className="wrapper">
-          <App />
-        </div>
+  <BrowserRouter>
+    <div className="main-wrapper skin-green">
+      <div className="wrapper">
+        <App />
       </div>
-    </BrowserRouter>
-  </React.StrictMode>
+    </div>
+  </BrowserRouter>
 );
 reportWebVitals();

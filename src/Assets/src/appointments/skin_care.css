@@ -1,0 +1,86 @@
+.form-control {
+    border-radius: 4px;
+}
+
+.box-note {
+    width: 30vw;
+}
+
+.pd-0 {
+    padding: 0 !important;
+}
+
+.mg-b-5px {
+    margin-bottom: 5px !important;
+}
+
+.mg-t-b-5px {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.mg-5px {
+    margin: 5px !important;
+}
+
+.dataTable-v>tbody>tr:nth-of-type(odd) {
+    background-color: #eee;
+}
+
+.w-200px {
+    width: 200px;
+}
+
+/* datatable custom */
+table.dataTable-v thead .sorting:after,
+table.dataTable-v thead .sorting_asc:after,
+table.dataTable-v thead .sorting_desc:after {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: block;
+    font-family: 'Glyphicons Halflings';
+    opacity: 0.5;
+}
+
+table.dataTable-v thead .sort {
+    padding-right: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+table.dataTable-v thead .sorting:after {
+    opacity: 0.2;
+    content: "\e150";
+}
+
+table.dataTable-v thead .sorting_asc:after {
+    content: "\e155";
+}
+
+table.dataTable-v thead .sorting_desc:after {
+    content: "\e156";
+}
+
+.boder-none {
+    border: none !important;
+}
+
+@media (max-width: 767px) {
+    .hide-only-mb {
+        display: none !important;
+    }
+
+    table.dataTable-v thead .sort {
+        padding-right: 25px;
+    }
+
+    .box-note {
+        max-width: 110px;
+    }
+
+    .box-customer {
+        max-width: 125px;
+        white-space: inherit !important;
+    }
+}

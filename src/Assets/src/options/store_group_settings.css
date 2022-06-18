@@ -1,0 +1,127 @@
+.po-r {
+    position: relative !important;
+    margin-bottom: 15px;
+}
+
+.table-responsive {
+    max-height: 400px;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.d-iflex {
+    display: inline-flex !important;
+}
+
+.search-content input {
+    width: 100%;
+    padding: 7px 15px 7px 40px;
+    background-color: #fff;
+    outline: none !important;
+    border-radius: 4px;
+    height: 34px;
+    border: 1px solid 1px solid #dadce0;
+}
+
+.search-content i.fa-search {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.fa.fa-search {
+    background-color: transparent;
+}
+
+.mask.mask-delete {
+    -webkit-mask-box-image: url(./../../images/delete-icon.svg)
+}
+
+.search-content .mask-delete {
+    background: #999;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.mask {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-image: none;
+    background-color: #0090DA;
+}
+
+.search-result ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    min-height: 60px;
+    max-height: 60vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0px 10px 20px rgb(0 0 0 / 30%);
+    background: #fff;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    top: -2px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.search-result ul li {
+    padding: 5px;
+    border-top: 1px solid #c5c5c5;
+    cursor: pointer;
+}
+
+.search-result ul li .info-pro {
+    width: calc(100% - 55px);
+}
+
+.search-result ul li:hover {
+    background-color: #f0f8ff;
+}
+
+img.thumbnail-c {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    /* padding: 5px; */
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.table_content {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.list-service-denys tbody tr td {
+    position: relative;
+}
+
+.list-service-denys tbody tr.is_remove td:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: rgb(255 133 133);
+    left: 0;
+    top: 50%;
+    opacity: .3;
+    pointer-events: none;
+}
+
+.mg-b-10px {
+    margin-bottom: 10px;
+}

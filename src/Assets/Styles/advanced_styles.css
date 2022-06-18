@@ -1,0 +1,419 @@
+@font-face {
+    font-family: Bold;
+    src: url(../src/dng_love/font/Nunito-Bold.ttf);
+}
+
+@font-face {
+    font-family: Regular;
+    src: url(../src/dng_love/font/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: Italic;
+    src: url(../src/dng_love/font/Nunito-Italic.ttf);
+}
+
+@font-face {
+    font-family: SemiBold;
+    src: url(../src/dng_love/font/Nunito-SemiBold.ttf);
+}
+
+.SemiBold {
+    font-family: SemiBold;
+}
+
+.pd-5-0 {
+    padding: 5px 0;
+}
+
+.mgl-10 {
+    margin-left: 10px;
+}
+
+.po-r {
+    position: relative;
+}
+
+.po-a {
+    position: absolute;
+}
+
+.select2-container--default .select2-selection--single,
+.select2-selection--multiple {
+    border-radius: 0 !important;
+    border-color: #d2d6de !important;
+}
+
+section.content {
+    font-family: Regular;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.form-serch-submit .input-group-append {
+    width: 40%;
+    display: flex;
+}
+
+.form-serch-submit input,
+.form-serch-submit button {
+    outline: none !important;
+}
+
+.form-serch-submit .input-group-append button {
+    border-radius: 0;
+    background: #10519f;
+    color: #fff !important;
+}
+
+.form-serch-submit .input-group-append button {
+    border-radius: 0;
+    background: #10519f;
+    color: #fff !important;
+    transition: .2s all linear;
+}
+
+.form-serch-submit .input-group-append .submit-btn {
+    width: calc(100% - 38px);
+}
+
+.btn-create {
+    background: #10519f;
+    width: 100%;
+    padding: 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s all linear;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.btn-create img {
+    height: 100%;
+    width: auto;
+}
+
+.mgl-5 {
+    margin-left: 5px;
+}
+
+.gf-table.table-fix {
+    overflow: auto;
+}
+
+.gf-table table {
+    position: relative;
+    border-collapse: collapse;
+}
+
+.gf-table table,
+.gf-table table td,
+.gf-table table th {
+    border: 0.3px solid #d0d0d0;
+}
+
+table.table-outside {
+    min-width: 600px;
+}
+
+.table .thead-light th {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+section.content-header {
+    display: none;
+}
+
+.form-serch-submit .input-group-append button:hover,
+.btn-create:hover {
+    background: #f36a26;
+    color: #fff !important;
+}
+
+.modal-header {
+    background: #10519f;
+    color: white;
+}
+
+.modal-title {
+    font-family: Bold;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.j-sb {
+    justify-content: space-between;
+}
+
+button.close {
+    color: white;
+    opacity: 1;
+}
+
+.min-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 90%;
+    font-weight: normal;
+    font-family: Bold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+.badge-success {
+    color: #ffff;
+    background-color: #28a745;
+}
+
+.badge-black {
+    color: #ffff;
+    background-color: #000000;
+}
+
+.badge-warning {
+    color: #212529;
+    background-color: #ffc107;
+}
+
+.badge-info {
+    color: #ffff;
+    background-color: #17a2b8;
+}
+
+.badge-danger {
+    color: #ffff;
+    background-color: #dc3545;
+}
+
+.gf-table table td {
+    vertical-align: middle !important;
+}
+
+.gf-table table td.vertical-align-top {
+    vertical-align: top !important;
+}
+
+.bold {
+    font-family: Bold;
+}
+
+.gf-table table tr {
+    transition: .175s all linear;
+}
+
+.gf-table table tr:hover {
+    background: #efefef;
+}
+
+.text-dark {
+    color: #343a40 !important;
+}
+
+.mgbt-15 {
+    margin-bottom: 15px;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.badge-default {
+    background: #d2d6de;
+    color: #444;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+.mgl-5 {
+    margin-left: 5px;
+}
+
+.mgr-5 {
+    margin-right: 5px;
+}
+
+.mgr-15 {
+    margin-right: 15px;
+}
+
+.bg-dark {
+    background-color: #343a40 !important;
+}
+
+.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.bg-warning {
+    background-color: #ffc107 !important;
+    color: #343a40 !important;
+}
+
+.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-warning {
+    color: #856404 !important;
+    background-color: #fff3cd !important;
+    border-color: #ffeeba !important;
+}
+
+@media screen and (max-width: 600px) {
+    table.table-outside {
+        min-width: unset;
+    }
+}
+
+.w-30-per {
+    width: 30%;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.grow-2 {
+    flex-grow: 2;
+}
+
+section.alert.alert-warning {
+    display: none;
+}
+
+ul.advanced-menu {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: #F7F7F7;
+}
+
+ul.advanced-menu li {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-family: SemiBold;
+    border-radius: 4px;
+}
+
+ul.advanced-menu li.active {
+    background: rgb(107 114 128 / 22%);
+}
+
+ul.advanced-menu li.active a {
+    color: #4b5362;
+}
+
+ul.advanced-menu li a {
+    color: #6B7280;
+}
+
+.mgr-10 {
+    margin-right: 10px;
+}
+
+.mgt-10 {
+    margin-top: 10px;
+}
+
+.mgt-20 {
+    margin-top: 20px;
+}
+
+.mgr-10 {
+    margin-right: 10px;
+}
+
+.mgbt-10 {
+    margin-bottom: 10px;
+}
+
+.mgt-10 {
+    margin-top: 10px;
+}
+
+.border {
+    border: 1px solid #dee2e6 !important;
+}
+
+.border-primary {
+    border-color: #007bff !important;
+}
+
+.border-secondary {
+    border-color: #6c757d !important;
+}
+
+.border-success {
+    border-color: #28a745 !important;
+}
+
+.border-danger {
+    border-color: #dc3545 !important;
+}
+
+.border-warning {
+    border-color: #ffc107 !important;
+}
+
+.border-info {
+    border-color: #17a2b8 !important;
+}
+
+.middle-tb td,
+.middle-tb th {
+    vertical-align: middle !important;
+}

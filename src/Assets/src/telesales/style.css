@@ -1,0 +1,402 @@
+@font-face {
+    font-family: Bold;
+    src: url(./font/Nunito-Bold.ttf);
+}
+
+@font-face {
+    font-family: Regular;
+    src: url(./font/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: Italic;
+    src: url(./font/Nunito-Italic.ttf);
+}
+
+@font-face {
+    font-family: SemiBold;
+    src: url(./font/Nunito-SemiBold.ttf);
+}
+
+#left-sidebar {
+    max-width: 50px;
+    min-width: 50px;
+    background: #10519f;
+    color: #fff;
+    transition: all .3s;
+    z-index: 99;
+}
+
+#left-sidebar ul {}
+
+#left-sidebar .nav-item-a {
+    position: relative;
+    padding: 15px;
+    display: inherit;
+    color: #fff;
+    cursor: pointer;
+}
+
+#left-sidebar .navhover .nav-item a:hover {
+    color: #10519f!important;
+    text-decoration: none;
+    background: #fff;
+}
+
+.po-r,
+.position {
+    position: relative;
+}
+
+.font18 {
+    font-size: 18px!important;
+}
+
+.w20 {
+    width: 20px;
+    text-align: center;
+}
+
+#left-sidebar .navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    float: unset;
+}
+
+#left-sidebar .active .nav-left {
+    position: fixed;
+    left: 0;
+    width: 50px;
+    z-index: 10;
+    background: #10519f;
+}
+
+#left-sidebar .noti-menu {
+    top: 5px;
+    right: 5px;
+}
+
+.noti,
+.noti-relation,
+.noti-row {
+    background: #f36a26;
+    font-size: 10px;
+    padding: 0 5px;
+    position: absolute;
+    color: #fff;
+    line-height: 13px;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.radius-5 {
+    border-radius: 5px;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.content-header,
+section.alert {
+    display: none;
+}
+
+.noti,
+.noti-row {
+    border-radius: 10px;
+    top: 0;
+    right: 0;
+}
+
+#left-sidebar {
+    display: none;
+}
+
+.sidebar-collapse #left-sidebar {
+    display: block;
+}
+
+#content {
+    width: 100%;
+    padding: 20px;
+    transition: transform .3s ease-in-out, width .3s ease-in-out;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+a:hover {
+    color: #f58233!important;
+    text-decoration: none;
+}
+
+.pb-2,
+.py-2 {
+    padding-bottom: .5rem!important;
+}
+
+.pt-2,
+.py-2 {
+    padding-top: .5rem!important;
+}
+
+a:not([href]) {
+    color: #10519f;
+    text-decoration: none;
+}
+
+.sidebar-collapse #content {
+    width: calc(100% - 50px);
+}
+
+section.content {
+    padding: 0;
+    font-family: Regular;
+}
+
+.shortcut {
+    background: #10519f;
+    color: #fff;
+    padding: 12.5px;
+    float: left;
+    border-radius: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+}
+
+img.left-icon {
+    width: 20px;
+    height: auto;
+    filter: brightness(100);
+}
+
+#left-sidebar .navhover .nav-item a:hover img.left-icon {
+    filter: brightness(1);
+}
+
+.btn-relation.active {
+    border: 2px solid red;
+    font-family: Bold;
+}
+
+.btn-relation {
+    height: 34px!important;
+    padding: .255rem .55rem;
+    margin-right: 8px;
+    color: white !important;
+}
+
+.noti-relation {
+    border-radius: 10px;
+    border: 2px solid #fff;
+    top: -10px;
+    right: -5px;
+}
+
+.bg-success {
+    background-color: #28a745!important;
+}
+
+.c-p {
+    cursor: pointer;
+}
+
+.mgr-5 {
+    margin-right: 5px;
+}
+
+.call-back-area input {
+    border: 1px solid skyblue;
+    color: skyblue;
+}
+
+.call-back-area input::placeholder {
+    color: skyblue;
+}
+
+.select2-container--default .select2-selection--single,
+.select2-selection--multiple {
+    border-radius: 0 !important;
+    border-color: #d2d6de !important;
+}
+
+.care-detail table {
+    margin-bottom: 0;
+}
+
+.creating-tr .select2-selection--multiple {
+    border: 1px dashed green !important;
+}
+
+.form-serch-submit input {
+    width: 60% !important;
+}
+
+.form-serch-submit .input-group-append {
+    width: 40%;
+    display: flex;
+}
+
+.form-serch-submit .input-group-append .submit-btn {
+    width: calc(100% - 38px);
+}
+
+.form-serch-submit .input-group-append button {
+    border-radius: 0;
+    background: #10519f;
+    color: #fff!important;
+    transition: .2s all linear;
+}
+
+.form-serch-submit .input-group-append button:hover {
+    background: #f36a26;
+    color: #fff!important;
+}
+
+.gf-table table {
+    position: relative;
+    border-collapse: collapse;
+}
+
+.gf-table table,
+.gf-table table td,
+.gf-table table th {
+    border: .3px solid #d0d0d0;
+}
+
+.gf-table thead th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+    max-width: 300px;
+    border-right: 1px solid;
+}
+
+.table .thead-light th {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.gf-table thead th[data-fix="1"] {
+    left: 0;
+    z-index: 2;
+}
+
+.min-w40 {
+    min-width: 40px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.intro-cus-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.intro-cus-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.align-middle {
+    vertical-align: middle!important;
+}
+
+.po-a {
+    position: absolute;
+}
+
+.care-detail {
+    background: #f0f0f0;
+    padding: 9px;
+    border: 1px solid #f0f0f0;
+    height: auto;
+    width: max-content;
+    top: calc(100% - 10px);
+    left: -5px;
+    transition: .2s all linear;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.active .care-detail {
+    opacity: 1;
+    visibility: unset;
+}
+
+.care-detail:before {
+    position: absolute;
+    content: "";
+    top: -10px;
+    left: 45px;
+    width: 0;
+    height: 0;
+    border: 10px solid #f0f0f0;
+    border-top: 0;
+    border-right-color: transparent;
+    border-left-color: transparent;
+}
+
+.task-tab {
+    border-bottom: 1px solid #f58233;
+}
+
+.j-sb {
+    justify-content: space-between;
+}
+
+.title-orange {
+    padding: 10px 10px 11px;
+    border-bottom: 1px solid #f58233;
+    font-size: 14px;
+    font-family: Bold;
+    color: #f58233;
+}
+
+.nav-task li {
+    margin-bottom: 0!important;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin: 1px;
+}
+
+.task-tab .nav-link:hover {
+    color: #f58233!important;
+}
+
+.tab-pane {
+    padding: 10px 0;
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+.nav-order .nav-link {
+    padding: 10px;
+}
+
+.call-results th,
+.no-th-border-right th {
+    border-right: none !important;
+}

@@ -1,0 +1,27 @@
+/* < 70 */
+.progress-bar-lv1 {
+    background-color: #FFCC00 !important;
+}
+
+/* 70 -> < 90 */
+.progress-bar-lv2 {
+    background-color: #009900 !important;
+}
+
+/* 90 -> < 100 */
+.progress-bar-lv3 {
+    background-color: #CC33FF !important;
+}
+
+/* 100 > */
+.progress-bar-lv4 {
+    background-color: #FF0099 !important;
+}
+
+.m-w-40 {
+    min-width: 40px;
+}
+
+.d-flex {
+    display: flex;
+}

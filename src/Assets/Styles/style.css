@@ -2370,5 +2370,5 @@ nav.box-selected.navbar-static-top>.select2>.selection .select2-selection__arrow
 }
 
 .content-wrapper {
-    height: 100vh;
+    min-height: 100vh;
 }

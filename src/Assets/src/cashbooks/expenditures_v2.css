@@ -1,0 +1,22 @@
+.text-vertical {
+    vertical-align: middle !important;
+}
+
+.div-table-bank {
+    max-height: 300px;
+    cursor: pointer;
+    overflow: auto !important;
+}
+
+.div-table-bank>table>thead>tr>th {
+    position: sticky;
+    top: 0px;
+    background: #fff;
+}
+
+.group-button {
+    display: flex;
+    justify-content: end;
+    text-align: center;
+    margin: 5px;
+}

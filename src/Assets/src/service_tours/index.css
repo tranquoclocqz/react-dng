@@ -1,0 +1,138 @@
+.modal-content {
+    background-clip: unset;
+    border-radius: 6px;
+}
+
+.wrap-all input,
+.wrap-all select {
+    padding: 0 15px;
+    width: 100%;
+    border: 1px solid #c3c3c3;
+    border-radius: 5px;
+}
+
+.d-inline-b {
+    display: inline-block;
+}
+
+.po-r {
+    position: relative;
+}
+
+.loading::before {
+    opacity: 0.8;
+}
+
+.w-10 {
+    width: 10% !important;
+}
+.w-20 {
+    width: 20% !important;
+}
+.w-30 {
+    width: 30% !important;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.w-80 {
+    width: 80% !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+.wrap-group-input {
+    display: flex;
+}
+
+.wrap-group-input .input-group-prepend {
+    width: 40%;
+}
+.wrap-group-input .input-group-prepend select{
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+}
+
+ul.results_unit {
+    list-style: none;
+    border: 1px solid #e5e5e5;
+    border-top: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    max-height: 155px;
+    overflow: auto;
+    padding-left: 0;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 0.1), 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+ul.results_unit>li {
+    clear: both;
+    line-height: 2.3rem;
+    text-align: left;
+    text-transform: none;
+    cursor: pointer;
+    width: 100%;
+    padding-left: 5px;
+}
+
+ul.results_unit>li:hover {
+    background: #eee;
+}
+
+ul.results_unit>li>span {
+    display: block;
+    padding: .35rem 0;
+    color: #4285f4;
+}
+
+.loading_input::before {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.results_unit::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;
+}
+
+.results_unit::-webkit-scrollbar {
+    width: 15px;
+}
+
+.results_unit::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: rgb(75, 75, 75);
+}
+
+.animation-fade-in {
+    animation: animation-fade-in 1s;
+}
+
+@keyframes animation-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

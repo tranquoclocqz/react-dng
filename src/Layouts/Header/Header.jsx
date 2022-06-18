@@ -1,9 +1,12 @@
 import React, { PureComponent } from "react";
 import Logo from "../../Assets/Images/dng-logo.svg";
+import Select2 from "../../Components/Select2/Select2";
 export default class Header extends PureComponent {
   constructor(props) {
     super(props);
   }
+  componentDidMount(){}
+  componentWillUnmount(){}
   render() {
     return (
       <header className="main-header">
@@ -26,57 +29,54 @@ export default class Header extends PureComponent {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </a>
-
-          <select
-            id="change-store"
-            className="form-control select2 select2-store"
-            defaultValue="1"
-          >
-            <option value="1">1: Tân Bình</option>
-            <option value="2">2: Quận 10</option>
-            <option value="3">3: Thủ Đức</option>
-            <option value="4">4: Phan Thiết</option>
-            <option value="6">6: Bình Dương</option>
-            <option value="7">7: Biên Hòa</option>
-            <option value="8">8: DNG - Học viên</option>
-            <option value="9">9: Vũng Tàu</option>
-            <option value="10">10: Long An</option>
-            <option value="11">11: Tiền Giang</option>
-            <option value="12">12: Cần Thơ</option>
-            <option value="13">13: Đà Nẵng</option>
-            <option value="14">14: Buôn Ma Thuột</option>
-            <option value="15">15: Phan Rang</option>
-            <option value="16">16: Gia Lai</option>
-            <option value="17">17: Gò Vấp</option>
-            <option value="19">19: Đà Nẵng II</option>
-            <option value="20">20: Tây Ninh</option>
-            <option value="22">22: Quảng Nam</option>
-            <option value="23">23: Nha Trang</option>
-            <option value="24">24: Đà Lạt - Lâm Đồng</option>
-            <option value="25">25: Long Xuyên - An Giang</option>
-            <option value="26">26: Tuy Hoà - Phú Yên</option>
-            <option value="27">27: Quy Nhơn - Bình Định</option>
-            <option value="30">30: Bảo Lộc - Lâm Đồng</option>
-            <option value="32">32: Campuchia - Phnom Penh</option>
-            <option value="33">33: Huế</option>
-            <option value="34">34: Bến Tre</option>
-            <option value="35">35: Bình Phước</option>
-            <option value="36">36: Quảng Ngãi</option>
-            <option value="37">37: SeoulCenter Quận 10</option>
-            <option value="39">39: Vĩnh Long</option>
-            <option value="40">40: Bình Thạnh</option>
-            <option value="41">41: SeoulCenter Quận 1</option>
-            <option value="42">42: Cà Mau</option>
-            <option value="45">45: Quận 7</option>
-            <option value="46">46: Academy Cần Thơ</option>
-            <option value="47">47: Trung Tâm Online</option>
-            <option value="48">48: Q.Đống Đa</option>
-            <option value="49">49: Academy Hà Nội</option>
-            <option value="50">50: S-Life</option>
-            <option value="51">51: Dĩ An</option>
-            <option value="52">52: Đắk Nông</option>
-            <option value="53">53: Hải Phòng</option>
-          </select>
+          <Select2>
+            <>
+              <option value="1">1: Tân Bình</option>
+              <option value="2">2: Quận 10</option>
+              <option value="3">3: Thủ Đức</option>
+              <option value="4">4: Phan Thiết</option>
+              <option value="6">6: Bình Dương</option>
+              <option value="7">7: Biên Hòa</option>
+              <option value="8">8: DNG - Học viên</option>
+              <option value="9">9: Vũng Tàu</option>
+              <option value="10">10: Long An</option>
+              <option value="11">11: Tiền Giang</option>
+              <option value="12">12: Cần Thơ</option>
+              <option value="13">13: Đà Nẵng</option>
+              <option value="14">14: Buôn Ma Thuột</option>
+              <option value="15">15: Phan Rang</option>
+              <option value="16">16: Gia Lai</option>
+              <option value="17">17: Gò Vấp</option>
+              <option value="19">19: Đà Nẵng II</option>
+              <option value="20">20: Tây Ninh</option>
+              <option value="22">22: Quảng Nam</option>
+              <option value="23">23: Nha Trang</option>
+              <option value="24">24: Đà Lạt - Lâm Đồng</option>
+              <option value="25">25: Long Xuyên - An Giang</option>
+              <option value="26">26: Tuy Hoà - Phú Yên</option>
+              <option value="27">27: Quy Nhơn - Bình Định</option>
+              <option value="30">30: Bảo Lộc - Lâm Đồng</option>
+              <option value="32">32: Campuchia - Phnom Penh</option>
+              <option value="33">33: Huế</option>
+              <option value="34">34: Bến Tre</option>
+              <option value="35">35: Bình Phước</option>
+              <option value="36">36: Quảng Ngãi</option>
+              <option value="37">37: SeoulCenter Quận 10</option>
+              <option value="39">39: Vĩnh Long</option>
+              <option value="40">40: Bình Thạnh</option>
+              <option value="41">41: SeoulCenter Quận 1</option>
+              <option value="42">42: Cà Mau</option>
+              <option value="45">45: Quận 7</option>
+              <option value="46">46: Academy Cần Thơ</option>
+              <option value="47">47: Trung Tâm Online</option>
+              <option value="48">48: Q.Đống Đa</option>
+              <option value="49">49: Academy Hà Nội</option>
+              <option value="50">50: S-Life</option>
+              <option value="51">51: Dĩ An</option>
+              <option value="52">52: Đắk Nông</option>
+              <option value="53">53: Hải Phòng</option>
+            </>
+          </Select2>
 
           <div className="navbar-custom-menu">
             <ul className="nav navbar-nav">

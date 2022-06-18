@@ -1,0 +1,178 @@
+.info-i {
+    visibility: hidden;
+    color: initial;
+    font-style: initial;
+    position: absolute;
+    width: max-content;
+    min-width: 165px;
+    min-height: max-content;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px 0 rgb(32 33 36 / 49%);
+    z-index: 9;
+    top: 100%;
+    opacity: 0;
+}
+
+.info-i.last-rs {
+    top: unset;
+    bottom: 0;
+    left: 105%;
+}
+
+
+.info-i>* {
+    margin: 0;
+}
+
+.info-tech-invoice {
+    position: relative;
+}
+
+.info-tech-invoice:hover .info-i {
+    visibility: unset;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.border-red {
+    border-bottom: solid 2px #dd4b39;
+}
+
+.tb-cus tr td {
+    padding: 2px !important;
+}
+
+.ic {
+    width: 18px;
+    height: 18px;
+}
+
+.dataTables_info {
+    display: none;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.tableFixHead {
+    max-width: 100%;
+    max-height: 75vh;
+    overflow: auto;
+    position: relative;
+}
+
+table {
+    position: relative;
+    border-collapse: collapse;
+}
+
+thead th {
+    position: -webkit-sticky;
+    /* for Safari */
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+thead th:first-child {
+    left: 0;
+    z-index: 1;
+}
+
+tbody th {
+    position: -webkit-sticky;
+    /* for Safari */
+    position: sticky;
+    left: 0;
+    /* background: #eee; */
+    border-right: 1px solid #CCC;
+}
+
+.gr {
+    background-color: gray;
+    color: white;
+    z-index: 99;
+}
+
+.carousel-inner>.item>a>img,
+.carousel-inner>.item>img {
+    height: 80vh;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .form-control {
+        width: 100%;
+    }
+}
+
+.mg-0 {
+    margin: 0;
+}
+
+.type-box {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    color: white;
+    margin-right: 3px;
+}
+
+.sale {
+    border: 1px solid #00a65a !important;
+    border-radius: 50%;
+}
+
+.box-img {
+    width: 22px;
+    float: left;
+    max-height: 37px;
+}
+
+.pd-r-0 {
+    padding-right: 0 !important;
+}
+
+.font-11 {
+    font-size: 11px !important;
+}
+
+.bg-unset {
+    background-color: unset !important;
+}
+
+.btn-export-excel {
+    width: 100px;
+    text-align: center;
+    margin: 0 0 5px auto;
+    position: absolute;
+}
+
+.btn-export-excel i {
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-export-excel{
+        position: relative;
+        width: 100%;
+    }
+
+    .form-group .select2-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+.user_work {
+    border: 1px solid #c91717;
+    border-radius: 4px;
+
+}

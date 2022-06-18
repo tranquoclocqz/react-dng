@@ -1,0 +1,45 @@
+.op-report {
+    opacity: 0;
+}
+
+#tb-reprot-voucher {
+    display: none;
+}
+
+label.bg-warning {
+    background-color: #f39c12 !important;
+}
+
+.dt-toolbar-footer {
+    margin: 0px;
+}
+
+@media screen and (max-width:767px) {
+    .nb-money {
+        margin-left: 8px;
+    }
+
+    .ml-xs-5px {
+        margin-left: 5px;
+    }
+
+    .voucher-name {
+        width: 30vw;
+        white-space: normal !important;
+    }
+}
+
+.nb-money {
+    cursor: pointer;
+}
+
+.tb-cus {
+    width: 100%;
+}
+
+.ml-20px {
+    margin-left: 20px;
+}
+.mr-5px {
+    margin-right: 5px;
+}

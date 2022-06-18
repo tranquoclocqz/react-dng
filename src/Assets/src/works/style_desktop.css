@@ -1,0 +1,74 @@
+body {
+    font-size: 15px;
+}
+
+.t-nav {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.t-nav>div {
+    width: 48%;
+}
+
+.w-45 {
+    width: 45%;
+}
+
+.w-45.name {
+    width: calc(45% - 20px) !important;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.chat-area {
+    min-height: 400px;
+}
+
+.index-part {
+    overflow-y: auto;
+}
+
+#chat {
+    max-height: 500px;
+}
+
+.style-3::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+.style-3::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.style-3::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+.detail-multi-select {
+    overflow-y: unset;
+}
+
+.parent-side {
+    padding-bottom: 5px;
+}
+
+.work-name {
+    padding: 10px 5px;
+}
+
+#chat {
+    border-bottom: unset;
+}

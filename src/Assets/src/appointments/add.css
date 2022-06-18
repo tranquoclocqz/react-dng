@@ -1,0 +1,381 @@
+#appointment_app .detail_hour {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border-radius: 50%;
+    text-align: -webkit-center;
+    line-height: 20px;
+    padding-left: 1px;
+    color: blue;
+}
+
+#appointment_app .other-box {
+    position: relative;
+    border-radius: 3px;
+    background: #fff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+#appointment_app section.alert-dismissible {
+    display: none;
+}
+
+#appointment_app .search_ktv {
+    border: none;
+    border-bottom: 1px dashed #2d99e5;
+    outline: none;
+    font-weight: 400
+}
+
+#appointment_app .search_ktv::-webkit-input-placeholder {
+    /* Edge */
+    color: #2d99e5;
+    font-weight: 300
+}
+
+#appointment_app .search_ktv:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #2d99e5;
+    font-weight: 300
+}
+
+#appointment_app .search_ktv::placeholder {
+    color: #2d99e5;
+    font-weight: 300
+}
+
+#appointment_app .df-date {
+    background: #fff;
+    border: 1px dashed rgb(108, 98, 98);
+    margin-right: 5px;
+    padding: 2px;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+#appointment_app .un_right {
+    opacity: 0.5
+}
+
+#appointment_app .active_time {
+    background: rgb(25, 133, 176);
+    color: white
+}
+
+#appointment_app .box {
+    opacity: 0;
+}
+
+#appointment_app .user-box {
+    height: 217px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    /* border: 1px solid rgb(144, 142, 142);
+padding: 7px;
+border-radius: 6px; */
+    overflow-x: auto;
+    overflow-y: hidden;
+    align-items: baseline;
+}
+
+#appointment_app .user-box::-webkit-scrollbar {
+    height: 5px
+}
+
+#appointment_app .content .select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0;
+}
+
+
+/* Track */
+
+#appointment_app .user-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+#appointment_app .user-box::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+#appointment_app .user-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#appointment_app .user-box .user_name {
+    padding: 0 5px;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 100%;
+    height: 36px;
+}
+
+#appointment_app .user-box .active_u span {
+    border: 2px solid rgb(12, 148, 179);
+}
+
+#appointment_app .user-box .active_u {
+    color: rgb(12, 148, 179);
+    opacity: 1;
+}
+
+#appointment_app .user-box>div {
+    text-align: center;
+    width: 125px;
+}
+
+#appointment_app .user-box>div span {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #f3e1e1;
+}
+
+#appointment_app .user-box span>img {
+    width: 100%;
+    height: auto;
+}
+
+#appointment_app .dpnone {
+    display: block !important;
+}
+
+#appointment_app .content.select2-container {
+    width: 100% !important;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    padding: 7px 8px;
+}
+
+#appointment_app #exampleModal .modal-dialog {
+    width: 450px;
+}
+
+#exampleModal .table>tbody>tr>td,
+#exampleModal .table>tbody>tr>th,
+#exampleModal .table>tfoot>tr>td,
+#exampleModal .table>tfoot>tr>th,
+#exampleModal .table>thead>tr>td,
+#exampleModal .table>thead>tr>th {
+    padding: 1px 8px;
+}
+
+#appointment_app .content .form-control {
+    box-shadow: none;
+    border-color: #9d9fa5;
+    border-radius: 4PX;
+}
+
+#appointment_app .title-ktv {
+    display: none;
+}
+
+#appointment_app #appoinment_report svg {
+    width: 100% !important;
+}
+
+#appointment_app .cover-chart2 {
+    padding: 20px;
+    border: 1px solid #ebebeb;
+}
+
+#appointment_app .red {
+    background: rgba(138, 9, 9, 0.62);
+    color: white;
+}
+
+#appointment_app .yellow {
+    background: #b9b902;
+    color: WHITE;
+}
+
+#appointment_app .green {
+    background: white;
+    color: black;
+}
+
+#appointment_app .content .select2-container {
+    width: 100% !important;
+}
+
+#appointment_app .box-time {
+    border: 1px solid #b9a6a6;
+    padding: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 4px;
+    background: white;
+    /* position: absolute; */
+    z-index: 9999;
+    width: 100%;
+    top: 38px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#appointment_app .box-time>span {
+    font-size: 13px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    width: calc(14.28% - 10px);
+    padding: 5px;
+    transition: 0.3s all;
+    height: max-content;
+    border-bottom: 4px solid rgb(157, 149, 149);
+    opacity: 0.7;
+    text-align: center;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    #appointment_app .box-time>span {
+        width: calc(31% - 3px);
+    }
+    .checkbox {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        transform: unset !important;
+    }
+    #appointment_app .be-hide {
+        display: none;
+    }
+}
+
+#appointment_app .right_shift {
+    border-bottom: 4px solid rgb(45, 169, 77) !important;
+    opacity: 1 !important;
+}
+
+
+/* #appointment_app .box-time span:hover {
+    background: rgb(45, 169, 77);
+    color: white;
+} */
+
+#appointment_app .active_date {
+    background: rgb(25, 133, 176);
+    border: 1px solid rgb(25, 133, 176);
+    color: white;
+}
+
+
+/* begin search phone */
+
+#appointment_app .resust-search {
+    padding: 0;
+    width: max-content;
+    overflow-y: auto;
+    height: 400px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+#appointment_app .resust-search table.load:after {
+    content: "Đang tải...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+}
+
+#appointment_app .hiding-pick {
+    color: #1d1d7d;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#appointment_app .resust-search table.load:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(236, 240, 245, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#appointment_app .resust-search table {
+    width: auto;
+    table-layout: fixed;
+    border-spacing: 1px;
+}
+
+#appointment_app .resust-search table td {
+    position: relative;
+}
+
+#appointment_app .resust-search table td>div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+#appointment_app .resust-search table th {
+    text-align: left;
+    top: 0;
+    position: sticky;
+    background-color: white;
+    z-index: 1;
+}
+
+@media (max-width:768px) {
+    #appointment_app .resust-search {
+        left: 0;
+    }
+}
+
+@media (max-width:425px) {
+    #appointment_app .resust-search table {
+        width: 90vw;
+    }
+}
+
+#appointment_app .loading2 {
+    position: relative;
+}
+
+#appointment_app .loading2::before {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    background-image: url('<?php echo base_url() ?>assets/images/loading.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1px;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.wrap_service .select2-container {
+    width: 100% !important;
+}

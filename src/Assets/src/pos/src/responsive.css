@@ -1,0 +1,154 @@
+@media (max-width: 1399px) {
+    .col-left-box {
+        width: calc(100% - 500px);
+    }
+
+    .col-right-box {
+        width: 490px;
+    }
+
+    .wrap-content .col-right {
+        width: 30% !important;
+    }
+
+    .list-all .list-box .cell-name {
+        width: 54%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .col-left-box {
+        width: calc(100% - 390px);
+    }
+
+    .col-right-box {
+        width: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrap-box-all {
+        display: block;
+        padding-top: 130px;
+    }
+
+    .wrap-box-all .col-left-box,
+    .wrap-box-all .col-right-box {
+        width: 100%;
+    }
+
+    .wrap-box-all .col-right-box {
+        padding-bottom: 20px;
+    }
+
+    .detail-form img {
+        display: none !important;
+    }
+
+    .detail-form table {
+        width: 100% !important;
+    }
+
+    .list-all .list-box .box-body .item-box {
+        flex-flow: wrap;
+    }
+
+    .list-all .list-box .cell-type {
+        padding-right: 0;
+    }
+
+    .list-all .list-box img.thumbnail-c {
+        display: none;
+    }
+
+    .list-all .list-box .cell-name {
+        width: calc(100% - 80px);
+    }
+
+    .list-all .list-box .cell-price {
+        width: 33%;
+    }
+
+    .list-all .list-box .cell-total {
+        width: 33%;
+    }
+
+    .list-all .list-box .cell-action {
+        width: 15%;
+    }
+
+    .list-all .box-head .cell-price,
+    .list-all .box-head .cell-quantity,
+    .list-all .box-head .cell-total,
+    .list-all .box-head .cell-action {
+        display: none;
+    }
+
+    .col-right-box .wrap-customer {
+        position: absolute !important;
+        top: 0;
+        background: #fff;
+        width: calc(100% - 10px);
+        z-index: 9;
+        left: 5px;
+    }
+
+    .table-responsive>.table>tbody>tr>td,
+    .table-responsive>.table>tbody>tr>th,
+    .table-responsive>.table>tfoot>tr>td,
+    .table-responsive>.table>tfoot>tr>th,
+    .table-responsive>.table>thead>tr>td,
+    .table-responsive>.table>thead>tr>th {
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .voucher {
+        display: flex;
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .voucher .discount-value span {
+        font-size: 0.8rem;
+    }
+
+    .voucher .voucher-cont {
+        font-size: 85%;
+    }
+
+    .voucher .voucher-cont .add_code {
+        display: flex;
+    }
+
+    .voucher .voucher-cont .add_code .input-code {
+        width: 60%;
+    }
+
+    #modal_voucher_partner .voucher-flex,
+    .voucher .voucher-info {
+        width: 100%;
+    }
+
+    #modal_add_voucher .nav-tabs>li>a {
+        font-size: 13px;
+    }
+
+    #modal_add_voucher .popup-body{
+        padding: 5px!important;
+    }
+
+    #modal_add_voucher .popup-body .nav-tabs {
+        margin: 0 5px!important;
+    }
+
+    #list-voucher-added {
+        margin: 0 5px!important;
+    }
+
+    #modal_voucher_partner .img-added-voucher {
+       max-height: 50px;
+    }
+}

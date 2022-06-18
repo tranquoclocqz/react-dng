@@ -1,0 +1,125 @@
+
+    /* ul-directive */
+    .ul-directive {
+        overflow-x: hidden;
+        list-style: none;
+        padding-left: 0;
+        max-height: 141px;
+        border-top: unset;
+        margin-top: 3px;
+        margin-bottom: 0;
+        display: inline-block;
+         width: 100%;
+    }
+    .avctive-direct{
+        position: relative;
+    }
+    .avctive-direct:before{
+        position: absolute;
+        content:"\f00c";
+        font-family: FontAwesome;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        color: darkgreen;
+    }
+    .avctive-direct:hover a{
+        background: rgb(182, 189, 187) !important;
+    }
+    .close-directive {
+        color: red !important;
+        position: absolute;
+        right: 5px;
+        top: 4px;
+    }
+    /* width */
+    .ul-directive::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    .ul-directive::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    .ul-directive::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    .ul-directive::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .ul-directive li a {
+        padding: 5px 7px;
+        width: 100%;
+        display: inline-block;
+        cursor: pointer;
+        color: black;
+    }
+
+    .ul-directive li a:hover {
+        background: #f5f5f5;
+    }
+   
+    .wrap-directive {
+        border: 1px solid #daa4a4;
+        box-shadow: 0px 4px 4px -1px #708186;
+        padding-top: 4px;
+        border-radius: 3px 3px 3px 3px;
+        position: absolute;
+        top: 35px;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background: white;
+    }
+
+    .wrap-directive>input {
+        width: calc(100% - 10px) !important;
+        margin: auto;
+        float: unset !important;
+        height: 25px;
+        font-size: 13px;
+        border-radius: 3px;
+    }
+
+    .result-directive {
+        height: 34px;
+        border: 1px solid #e0d5d5;
+        padding: 6px 7px;
+        cursor: pointer;
+        background: white;
+        border-radius: 4px;
+        overflow: hidden;
+        width: 100%;
+        line-height: 1.8;
+    }
+
+    .wrap-directive {
+        display: none;
+    }
+
+    .avctive-direct {
+        background: rgb(182, 189, 187);
+    }
+
+    .form-directive {
+        position: relative;
+    }
+
+    .square .result-directive{
+        border-radius:0 ;
+    }
+
+    .form-directive:before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 7px;
+        content: "\f0d7";
+        font-family: FontAwesome;
+        pointer-events: none;
+    }

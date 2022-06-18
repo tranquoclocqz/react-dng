@@ -1,0 +1,428 @@
+.box1 {
+    opacity: 0;
+}
+
+.o-hidden {
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0px auto;
+}
+
+.scrol-body {
+    max-height: 45vh;
+    overflow: auto;
+}
+
+.scrol-body img {
+    border: 1px solid #D5D5D5;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.style-3::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+.style-3::-webkit-scrollbar {
+    width: 3px;
+    background-color: #F5F5F5;
+}
+
+.style-3::-webkit-scrollbar-thumb {
+    background-color: #000000b7;
+}
+
+.btn-sv {
+    margin: 25px 0 10px 0px;
+}
+
+.drop-cl {
+    position: absolute;
+    padding: 7px 5px 5px 5px;
+    margin: 2px 0 0;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    min-width: 140px;
+    max-height: 300px;
+    z-index: 9999;
+    position: absolute;
+}
+
+.drop-cl ul {
+    overflow: auto;
+    max-height: 200px;
+}
+
+.tb-center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-cus {
+    width: 40% !important;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 0px auto;
+        padding: 30px 0px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .modal-cus {
+        width: 90% !important;
+        margin: 0px auto;
+    }
+
+    #accountModal {
+        padding: 0px !important;
+    }
+}
+
+.file-img {
+    background: #F5F5F5;
+    position: relative;
+    display: inline-block;
+    margin: 10px 5px 10px 10px;
+    vertical-align: top;
+    border: 1px solid #D5D5D5;
+    padding: 6px 6px 6px 6px;
+}
+
+.form-control {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    height: 34px;
+}
+
+.tb-cus tr td {
+    padding: 2px !important;
+}
+
+/* The Modal (background) */
+.modal1 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content1 {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption1 {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content1,
+#caption1 {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close1 {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close1:hover,
+.close1:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content1 {
+        width: 100%;
+    }
+}
+
+.line-clamp {
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cash-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.menu_book,
+.menu_book ul {
+    padding: 0px;
+}
+
+.menu_book li {
+    list-style: none;
+}
+
+.img_book {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.bg-table {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.text-vertical {
+    vertical-align: middle !important;
+}
+
+.p-display {
+    display: flex;
+}
+
+.s-width {
+    width: 100px;
+}
+
+.st-width {
+    width: 93px;
+}
+
+.col-search {
+    padding: 5px;
+    background: rgb(230, 230, 230);
+    margin-bottom: 5px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.border-0,
+.col-flex .select2-selection {
+    border-radius: 0px !important;
+}
+
+.col-flex {
+    display: flex;
+}
+
+.col-flex i {
+    vertical-align: sub;
+}
+
+.table-body {
+    background: #f5f5f5;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+    padding-bottom: 10px;
+}
+
+.pb-0 {
+    padding-bottom: 0px
+}
+
+.pt-0 {
+    padding-top: 0px
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: rgba(153, 213, 222, 0.09);
+}
+
+.search-none {
+    display: none;
+}
+
+.w-auto {
+    width: 600px !important;
+}
+
+@media only screen and (max-width: 1200px) {
+    .table-none-1 {
+        display: none;
+    }
+
+    .note-block {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .open-search {
+        visibility: visible;
+    }
+
+    .col-search {
+        display: none;
+    }
+
+    .search-none,
+    .col-search .form-group {
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .task-width {
+        position: relative;
+        width: 500px;
+    }
+
+    .button-index {
+        text-align: left;
+    }
+
+    .class-modal {
+        overflow-x: scroll !important;
+    }
+
+    .col-search .form-group .input-group-addon {
+        display: none;
+    }
+
+    .col-search .form-group input,
+    .col-search .form-group select,
+    .col-search .form-group .select2-container,
+    #reportrange {
+        width: 150px !important;
+    }
+
+    .example5 {
+        height: 25px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .example5 span {
+        font-size: 13px;
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .navbar-custom-menu .nav>li>a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.tx-upbercase {
+    text-transform: uppercase;
+}
+
+.sp-discount {
+    bottom: 7px;
+    position: absolute;
+    right: 4px;
+}
+
+.detail-dis {
+    display: none
+}
+
+.hight-table {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.wrap-custom-upload {
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    height: 100px;
+    position: relative;
+}
+
+.wrap-custom-upload input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.wrap-custom-upload img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.wrap-custom-upload .btn-remove-image {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    right: -13px;
+    top: -12px;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    border: none;
+}
+
+#image-voucher-partner {
+    display: none;
+}
+
+.voucher-img {
+    max-width: 80px;
+    max-height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+}

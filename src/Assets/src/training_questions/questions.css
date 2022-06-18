@@ -1,0 +1,259 @@
+.list-group-name>tbody>tr>td {
+    padding: 0;
+}
+
+.them-cau-hoi .btn {
+    padding: 4px 12px;
+}
+
+.quetion-btn .btn {
+    margin-right: 20px;
+}
+
+.quetion-btn .btn.active {
+    background-color: #ff44009e;
+    color: #fff;
+}
+
+.quetion-btn .btn.active:focus,
+.quetion-btn .btn.active:active:focus {
+    outline: 0 !important;
+    outline-offset: none;
+}
+
+.quetion-btn .btn:focus,
+.quetion-btn .btn:active:focus {
+    outline: 0 !important;
+    outline-offset: none;
+}
+
+.todo-list {
+    padding-top: 10px;
+    width: 400px;
+}
+
+.todo {
+    background:#dadada66;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    padding: 3px 10px;
+    margin-bottom: 6px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+}
+
+.todo-text {
+    cursor: pointer;
+}
+
+.todo-completed {
+    text-decoration: line-through;
+}
+
+.todo button {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.todo button {
+    color: #f37070;
+    background: transparent;
+}
+
+.todo input {
+    background: #fff;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    padding: 7px 10px;
+    font-size: .5em;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: #000;
+    outline: 0;
+    border: 0;
+    flex: 1;
+}
+
+.edit-group-name i {
+    margin-right: 10px;
+    padding: 3px 6px;
+    border-radius: 2px;
+}
+
+.edit-group-name i:hover {
+    background: #ff44009e;
+    color: #fff;
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout-info {
+    border-left-color: #1b809e;
+}
+
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+
+.new_question {
+    /* background:#f5f6f7; */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.icon-remove-img {
+    position: absolute;
+    left: 19px;
+    top: 4px;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 1px #5a5757c2;
+    background: #000000d1;
+    padding: 2px 3px 0px;
+}
+
+.them-cau-hoi {
+    display: flex;
+    justify-content: space-between;
+}
+
+.them-cau-hoi ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    padding: 0;
+    margin-bottom: 0
+}
+
+.cauhoi textarea {
+    flex: 78;
+    width: 80%;
+    margin-bottom: 1.5em;
+    border: 1px solid;
+    border-left-width: 4px;
+    border-color: #ff5500c9;
+}
+
+.cauhoi-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.group-cauhoi-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+ /* th{
+     font-weight: 400;
+ } */
+
+ .list-question-1 tbody th:nth-child(2){
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6; */
+    /* height: 5em; */
+    /* white-space: pre-wrap; */
+    white-space:  pre-line;
+}
+
+.list-question-1 {
+    padding: 10px 10px 0px;
+    box-shadow: 0 10px 20px 4px #98bdad5c;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+.wrapper {
+    overflow-x: unset
+}
+
+.them-cau-hoi .btn.active,
+.them-cau-hoi .btn:focus {
+    color: #fff;
+    background-color: #f34c4c;
+    border-color: #ffc8c8;
+    outline: unset;
+}
+
+.select2-container {
+    max-width: 550px;
+    width: 100%!important;
+}
+
+.import-exel{
+    max-height: 70vh;   
+    overflow-x: auto;
+}
+.import-exel::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background: #FF9800;
+}
+/* .import-exel::-webkit-scrollbar{
+	display: none;
+} */
+.import-exel::-webkit-scrollbar {
+	width: 8px;
+	background-color: #f5f5f5;
+}
+
+.quetion-btn.active{
+    text-align: center;
+}
+
+
+
+
+@media screen and (max-width:550px) {
+    .delete_all_question.active{
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+    }
+    .cauhoi-1 {
+        flex-direction: column;
+    }
+    .import-exel{
+        max-height: 55vh;   
+    }
+    .new_question{
+        padding: 5px 10px!important;
+    }
+    .cauhoi-1 textarea,
+    .cauhoi-1 div {
+        width: 100%!important;
+    }
+    .quetion-btn button {
+        margin: 5px!important;
+    }
+    .group-cauhoi-1 {
+        flex-direction: column;
+    }
+    .group-cauhoi-1 .col-sm-6 {
+        padding: 0;
+    }
+
+    .search-stores-1{
+        /* display: block!important; */
+        flex-wrap: wrap;
+        flex-basis: 48%;
+        gap: 10px!important;
+    }
+    .search-stores-1 > * {
+        width: 48%!important;
+    }
+    .footer-add-question {
+        flex-wrap: wrap;
+    }
+}

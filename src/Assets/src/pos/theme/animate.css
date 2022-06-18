@@ -1,0 +1,101 @@
+.dialog {
+    -webkit-animation: appear .3s;
+    animation: appear .3s;
+}
+
+.appear {
+    animation: appear .1s;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.zoomin {
+    -webkit-animation: zoomin 0.3s;
+    animation: zoomin 0.3s;
+}
+
+@keyframes zoomin {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+}
+
+@-webkit-keyframes zoomin {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+}
+
+@keyframes zoomIn-df {
+
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.zoomIn-df {
+    -webkit-animation: zoomIn-df 0.3s;
+    animation: zoomIn-df 0.3s;
+}
+
+@-webkit-keyframes zoomIn-df {
+
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fadeIn {
+    -webkit-animation: fadeIn .3s;
+    animation: fadeIn .3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

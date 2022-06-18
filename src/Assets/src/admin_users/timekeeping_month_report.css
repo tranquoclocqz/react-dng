@@ -1,0 +1,223 @@
+.heading-last-invoice {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.table-last-invoice {
+    font-size: 13px;
+}
+
+#reportrangeCustome2 {
+    padding: 7px 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+    border-radius: 4px;
+}
+
+.box-m {
+    opacity: 0;
+}
+
+.loading::before {
+    opacity: 0.8;
+    cursor: progress;
+}
+
+.border-example {
+    border-radius: 4px;
+    border: 1px solid #aaa;
+}
+
+.view-invoice {
+    position: absolute;
+    bottom: 5px;
+}
+
+.wrap-table-sroll {
+    padding: 0;
+    overflow-y: auto;
+    max-height: 210px;
+}
+
+.wrap-table-sroll table th {
+    top: 0;
+}
+
+.table-hover>tbody>tr:hover {
+    background-color: #adadad;
+}
+
+.table-hover>tbody>tr:hover th {
+    background-color: #adadad;
+}
+
+.footer-drop {
+    padding-top: 10px;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: space-between;
+}
+
+.footer-drop .list-btn-drop {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.footer-drop .list-btn-drop .btn {
+    height: 22px;
+}
+
+.dropdown-custome .btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #c1c1c1;
+    padding: 3px 6px;
+}
+
+.dropdown-custome .dropdown-menu {
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0px 8px 8px 8px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    overflow: hidden;
+}
+
+.modal-content {
+    background-clip: unset;
+}
+
+.date-rp {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    height: 32px;
+}
+
+.drop-cl {
+    position: absolute;
+    padding: 7px 5px 5px 5px;
+    margin: 2px 0 0;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    min-width: 300px;
+    z-index: 2;
+    /* z-index: 9999; */
+    display: none;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 2px 6px 2px rgba(60, 64, 67, .15);
+}
+
+.drop-cl .drop-child {
+    width: 75px;
+    float: left
+}
+
+.tableFixHead {
+    max-width: 100%;
+    height: 72vh;
+    overflow: scroll;
+    position: relative;
+}
+
+table {
+    position: relative;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 0.25em;
+}
+
+td.active {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+}
+
+thead th {
+    position: -webkit-sticky;
+    /* for Safari */
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+thead th {
+    left: 0;
+    z-index: 1;
+}
+
+thead th:first-child {
+    left: 0;
+    z-index: 3;
+}
+
+tbody th:first-child {
+    left: 0;
+    z-index: 1;
+}
+
+tbody th {
+    position: -webkit-sticky;
+    /* for Safari */
+    position: sticky;
+    left: 0;
+    background: white;
+    border-right: 1px solid #CCC;
+}
+
+.weeken {
+    background: #eee;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.po-r {
+    position: relative;
+}
+
+.id-timekeeping {
+    position: absolute;
+    right: 0;
+    font-size: smaller;
+    font-weight: 600;
+}
+
+.box-btn-c {
+    float: right !important;
+}
+
+.box-btn-c button {
+    margin: 5px;
+}
+
+.animation-fade-in {
+    animation: animation-fade-in 0.5s;
+}
+
+@keyframes animation-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    thead th,
+    tbody th {
+        position: relative;
+    }
+}

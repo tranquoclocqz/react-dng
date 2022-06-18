@@ -1,0 +1,14 @@
+.intruction-voucher-partner {
+    position: relative;
+    max-width: 100%;
+    padding: 20px;
+    overflow: auto;
+    box-shadow: rgb(0 0 0 / 25%) 0px 0px 5px 0px, rgb(0 0 0 / 10%) 0px 0px 1px 0px;
+    background-color: white;
+}
+
+.intruction-voucher-partner .btn-coppy {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}

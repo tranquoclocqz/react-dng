@@ -1,0 +1,157 @@
+<table class="table table-striped table-bordered table-hover ng-isolate-scope dataTable no-footer" ng-class="{'head': rows.length > 10}">
+    <thead>
+        <tr>
+            <th style="width:2%;text-align: center;">No.</th>
+            <th ng-style="col.opts" ng-repeat="col in columns" ng-class="{'sorting_asc':col.sort == 'asc', 'sorting_desc':col.sort == 'desc', 'sorting': col.sort != 'desc' && col.sort != 'asc'}"
+                ng-click="col.sort = col.sort=='asc' ? 'desc' : 'asc';resetColumnsSort(col);updateWhere()" aria-controls="DataTables_Table_0"
+                rowspan="1" colspan="1">
+                {{col.title}}
+            </th>
+        </tr>
+        <tr ng-if="columns[0].filter">
+            <th></th>
+            <th ng-repeat="col in columns">
+                <input ng-keyup="$event.keyCode == 13 ? changeSubFilter() : null" ng-model="subFilter[columns[$index].model]" ng-if="col.filter.type=='text'"
+                    type="text" ng-change="updateWhere()" ng-class="form-control" class="ipt">
+                <select ng-change="updateWhere()" class="form-control ipt" ng-model="subFilter[columns[$index].model]" ng-if="col.filter.type=='select'">
+                    <option value="">All</option>
+                    <option ng-repeat='o in col.filter.values' value="{{o.value}}">
+                        {{o.label}}
+                    </option>
+                </select>
+
+                <input ng-if="col.filter.type=='date'" type="text" class="form-control ipt" uib-datepicker-popup="dd-MM-yyyy" ng-change="updateWhere()"
+                    ng-model="subFilter[columns[$index].model]" placeholder="DD-MM-YYYY" is-open="isOpenToClnd[$index]" datepicker-options="dpOptions"
+                    close-text="Close" ng-click="isOpenToClnd[$index] = !isOpenToClnd[$index]" alt-input-formats="altInputFormats"
+                    ng-required="true">
+                </input>
+
+            </th>
+        </tr>
+    </thead>
+</table>
+<div class="vbTable" ng-class="{'vb-table-scroll2': rows.length > 10}" custom-scroll="{ 'theme': 'minimal-dark', 'autoHide': false }">
+    <table class="table vb-table2 table-bordered table-hover dataTable no-footer ng-isolate-scope  " width="100%">
+        <tbody ng-show="rows.length == 0">
+            <tr>
+                <td width="100%" align="center">No data available in table</td>
+            </tr>
+        </tbody>
+        <tbody ng-show="rows.length > 0">
+            <tr ng-repeat="row in rows" class="{{tblBridge.classForRow(row)}}" ng-style="">
+                <td style="width:2% !important;" valign="middle" align="center">{{pagingInfo.offset + $index + 1}}</td>
+                <td style="width: {{col.opts.width}} !important ;cursor: pointer" class="name" ng-repeat="col in columns" ng-dblclick="dbClickRow(row)"
+                    rowspan="1" colspan="1">
+                    <div ng-if="!col.isState || col.isState == false">{{col.renderWithFunc && col.renderWithFunc(row[col.model], '', row) || row[col.model]}}</div>
+                    <span ng-if="col.actions" ng-repeat="action in col.actions">
+                        <button ng-show="!action.hide(row)" ng-disabled="action.disable" perms permsreq="{{action.act}}" permstbl="{{action.perms}}"
+                            class="btn btn-xs {{action.btnClass}}" ng-click="action.func(row)" uib-tooltip="{{action.hint || action.text}}"
+                            tooltip-placement="bottom">
+                            <i ng-if="action.icon" class="fa {{action.icon}}"></i>{{action.hint && action.text || action.act}}
+                        </button>&nbsp;
+                    </span>
+                    <span ng-if="col.save&&!col.actions">
+                        <form style="display:grid; grid-template-columns: 80% 20%" name="Form">
+                            <input style="font-size: 13px" class="input-lg " required="" name="tracking" value="{{col.number(row)}}" pattern="\d*" maxlength="30"
+                                minlength="3">
+                            <button type="button" class="btn btn-primary" ng-click="col.save($event,row)" style="padding: 0px">Save</button>
+                        </form>
+                    </span>
+                    <span ng-if="col.isState && col.isState == true" ng-class="{'label label-danger':col.state(row) == 'Denied' ,'label label-warning':col.state(row) == 'processing','label label-info label-form':col.state(row) == 'Approve' }">
+                        {{col.renderWithFunc && col.renderWithFunc(row[col.model], '', row) || row[col.model]}}
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="dt-toolbar-footer">
+    <div class="col-sm-6 col-xs-12 hidden-xs">
+        <div ng-show="rows.length > 0" class="dataTables_info" role="status" aria-live="polite">Hiển thị từ {{pagingInfo.offset
+            + 1}} đến {{ (pagingInfo.offset + pagingInfo.itemsPerPage) > pagingInfo.total ? pagingInfo.total : (pagingInfo.offset
+            + pagingInfo.itemsPerPage)}} trong tổng {{pagingInfo.total}}</div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <div ng-show="rows.length > 0" class="dataTables_paginate paging_simple_numbers">
+            <ul class="pagination">
+                <li ng-disable="pagingInfo.currentPage==1"><span class="previous" ng-click="Previous(pagingInfo.currentPage)">Previous</span></li>
+                <li ng-if="pagingInfo.currentPage > 4"><span href="#" ng-click="go2Page(1)">1</span></li>
+                <li class="disabled" ng-if="pagingInfo.currentPage > 4"><span href="#" onclick="event.preventDefault()">…</span></li>
+                <li ng-repeat="i in getRange(pagingInfo)" ng-class="{active: pagingInfo.currentPage == i}"><span href="#"
+                        class="pageIndex" ng-click="go2Page(i)">{{i}}</span></li>
+                <li class="disabled" ng-if="(pagingInfo.totalPage - currentPage) > 3"><span href="#" onclick="event.preventDefault()">…</span></li>
+                <li ng-if="(pagingInfo.totalPage - pagingInfo.currentPage) > 3"><span ng-click="go2Page(pagingInfo.totalPage)"
+                        class="">{{pagingInfo.totalPage}}</span></li>
+                <li><span class="next" ng-click="pagingInfo.currentPage != pagingInfo.totalPage && go2Page(pagingInfo.currentPage + 1)">Next</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<style>
+    .table>tbody>tr>td {
+        line-height: 30px !important;
+    }
+
+    .table.dataTable thead>tr>th {
+        padding: 5px 4px !important;
+    }
+
+    .table.dataTable tbody>tr>td {
+        padding: 3px 6px !important;
+    }
+
+    .table {
+        width: 100%;
+    }
+
+    .table.head {
+        width: 100% !important;
+    }
+
+    /*.table .tbody {
+        display: block;
+        width: 100%;
+        height: 200px;
+        overflow-y: scroll;
+    }*/
+
+    .vb-table-scroll2 {
+        display: block;
+        height: 55vh !important;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .vb-table2.table {
+        margin-top: 0px !important;
+        border-top: 0px !important;
+    }
+
+    .vb-table-scroll2 thead {
+        width: 100%;
+        position: absolute;
+    }
+
+    .vbTable-scroll thead {
+        width: 100%;
+        position: absolute;
+    }
+
+    .vbTable-scroll {
+        display: block;
+        height: 350px !important;
+        overflow-y: scroll;
+        position: relative;
+    }
+    .ipt{
+        border: 1px solid #d3d3d3;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        padding: 3px;
+        height: 35px;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+</style>

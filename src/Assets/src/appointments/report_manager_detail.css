@@ -1,0 +1,37 @@
+.mg-t-10 {
+    margin-top: 10px;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.op-report {
+    opacity: 0;
+}
+
+.text-max-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal !important;
+}
+
+.mx-h-80 {
+    max-height: 80vh;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.box-note {
+    width: 30vw !important;
+}
+
+@media (max-width: 767px) {
+    .box-note {
+        width: 50vw !important;
+    }
+}

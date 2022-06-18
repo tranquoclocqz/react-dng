@@ -1,0 +1,24 @@
+.container {
+    margin-top: 15px;
+}
+
+.form-footer {
+    margin-bottom: 25px;
+}
+
+.datepickerCus {
+    background-color: #fff!important;
+}
+
+.has-error .form-control {
+    border-color: #dd4b39!important;
+    box-shadow: none;
+}
+
+.form-group .has-error label {
+    color: #dd4b39;
+}
+
+.has-error .select2-selection--single {
+    border-color: #dd4b39!important;
+}

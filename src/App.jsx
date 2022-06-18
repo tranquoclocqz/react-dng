@@ -13,17 +13,19 @@ function App() {
       <Fragment>
         <Suspense fallback={<div className="loading-lazy" />}>
           <div className="content-wrapper">
-            <Routes>
-              <Route index path="/" element={<Home />} />
-              {router.map((item) => {
-                const Com = React.lazy(() =>
-                  import(`./pages/${item.component}`)
-                );
-                return (
-                  <Route key={item.path} path={item.path} element={<Com />} />
-                );
-              })}
-            </Routes>
+            <section className="content">
+              <Routes>
+                <Route index path="/" element={<Home />} />
+                {router.map((item) => {
+                  const Com = React.lazy(() =>
+                    import(`./Pages/${item.component}`)
+                  );
+                  return (
+                    <Route key={item.path} path={item.path} element={<Com />} />
+                  );
+                })}
+              </Routes>
+            </section>
           </div>
         </Suspense>
       </Fragment>

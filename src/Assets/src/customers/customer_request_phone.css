@@ -1,0 +1,39 @@
+.box-1 {
+    opacity: 0;
+}
+
+.tb-center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hg-70 {
+    height: 70px;
+}
+
+.user-create-img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.show-ipad {
+    display: none;
+}
+
+.mx-w-100 {
+    max-width: 100%;
+}
+
+@media only screen and (max-width:1100px) and (min-width: 768px) {
+    .show-ipad {
+        display: inline-block;
+    }
+
+    .show-destop {
+        display: none;
+    }
+}
