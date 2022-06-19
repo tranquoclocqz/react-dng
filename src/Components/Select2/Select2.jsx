@@ -12,6 +12,11 @@ export default class Select2 extends PureComponent {
   componentDidMount() {
     const option = this.props.options;
     $(this.select2.current).select2(option);
+    if (typeof this.props.onChange === "function") {
+      $(this.select2.current).on("change", (e) => {
+        this.props.onChange(e);
+      });
+    }
   }
   componentWillUnmount() {
     $(this.select2.current).select2("destroy");
