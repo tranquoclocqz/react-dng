@@ -8,13 +8,20 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+/**
+ * Provider redux here
+ */
 root.render(
-  <BrowserRouter>
-    <div className="main-wrapper skin-green">
-      <div className="wrapper">
-        <App />
+  <React.StrictMode>
+    {/* <Provider store={store} > */}
+    <BrowserRouter>
+      <div className="main-wrapper skin-green">
+        <div className="wrapper">
+          <App />
+        </div>
       </div>
-    </div>
-  </BrowserRouter>
+    </BrowserRouter>
+    {/* </Provider> */}
+  </React.StrictMode>
 );
 reportWebVitals();

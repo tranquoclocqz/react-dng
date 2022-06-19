@@ -1,4 +1,5 @@
 import moment from "moment";
+import DNGRoute from "./Routes/route";
 
 function formatDate(date, format = "DD/MM/YYYY") {
     return moment(date).format(format);
@@ -24,5 +25,6 @@ function getMoney(val) {
 export {
     formatDate,
     formatNumber,
-    getMoney
+    getMoney,
+    DNGRoute
 };
