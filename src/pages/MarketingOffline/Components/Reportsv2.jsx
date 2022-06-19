@@ -16,7 +16,7 @@ function Reportsv2({
           className="fa fa-sticky-note-o"
           aria-hidden="true"
         ></i>
-        <div className="box-note" ng-if="showNote">
+        <div className="box-note" ng-if="showNote" style={{display: 'none'}}>
           * TB: Trung bình <br />
           * KH: Khách hàng <br />
           * HĐ: Hóa đơn <br />
