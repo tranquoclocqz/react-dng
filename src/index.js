@@ -8,12 +8,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-/**
- * Provider redux here
- */
 root.render(
-  <React.StrictMode>
-    {/* <Provider store={store} > */}
     <BrowserRouter>
       <div className="main-wrapper skin-green">
         <div className="wrapper">
@@ -21,7 +16,5 @@ root.render(
         </div>
       </div>
     </BrowserRouter>
-    {/* </Provider> */}
-  </React.StrictMode>
 );
 reportWebVitals();

@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 function DNGRoute() {
   const [dngRoute, setDngRoute] = useState([]);
   useEffect(() => {
+    /**
+     * Call API get route available
+     */
     setDngRoute([
       {
         name: "reports_v2",
