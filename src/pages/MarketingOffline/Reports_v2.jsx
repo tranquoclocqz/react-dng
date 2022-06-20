@@ -6,6 +6,7 @@ import Select2 from "../../Components/Select2/Select2";
 import axiosClient from "../../Api/axiosClient";
 import debounce from "lodash/debounce";
 import Reportsv2 from "./Components/Reportsv2";
+import Daterangpicker from "../../Components/Daterangepicker/Daterangpicker";
 import { formatDate } from "../../Hooks";
 
 export default class Reports_v2 extends PureComponent {
@@ -17,7 +18,7 @@ export default class Reports_v2 extends PureComponent {
       campaign_selected: { id: 0, name: "" },
       location_selected: { id: 0, name: "" },
       date: "",
-      channel_id: 0
+      channel_id: 0,
     };
     this.setTextSearchCampaign = this.setTextSearchCampaign.bind(this);
     this.setTextSearchLocation = this.setTextSearchLocation.bind(this);
@@ -45,6 +46,8 @@ export default class Reports_v2 extends PureComponent {
       date: "",
     }));
     this.getParnter(0);
+    this.getLocation();
+    this.removeLocation();
   }
 
   removeLocation(e) {
@@ -62,7 +65,10 @@ export default class Reports_v2 extends PureComponent {
     this.setState((prevState) => ({
       ...prevState,
       campaign_selected: { id: item.id, name: item.name },
-      date: `${formatDate(item.start_date)} - ${formatDate(item.end_date)}`,
+      date: {
+        start_date: `${formatDate(item.start_date)}`,
+        end_date: `${formatDate(item.end_date)}`,
+      },
     }));
     this.getParnter(item.id);
     this.showCampaign.current.classList.add("hidden");
@@ -175,7 +181,7 @@ export default class Reports_v2 extends PureComponent {
         campaign_id: this.state.campaign_selected.id,
         campaign_name: this.state.campaign_selected.name,
         channel_id: this.state.channel_id,
-        date: this.state.date,
+        date: `${this.state.date.start_date} - ${this.state.date.end_date}`,
         import_id: "0",
         loading: true,
         location_id: this.state.location_selected.id,
@@ -196,11 +202,26 @@ export default class Reports_v2 extends PureComponent {
           <div className="box-header box-filter">
             <div className="row">
               <div className="form-group col-sm-2 col-xs-6">
-                <input
-                  type="text"
+                <Daterangpicker
                   className="form-control"
                   disabled={!this.state.date ? "disabled" : false}
-                  value={this.state.date}
+                  value={
+                    this.state.date &&
+                    `${this.state.date.start_date} - ${this.state.date.end_date}`
+                  }
+                  placeholder="Thời gian chương trình"
+                  options={{
+                    opens: "right",
+                    alwaysShowCalendars: true,
+                    showCustomRangeLabel: false,
+                    minDate: this.state.date.start_date,
+                    maxDate: this.state.date.end_date,
+                    startDate: this.state.date.start_date,
+                    endDate: this.state.date.end_date,
+                    locale: {
+                      format: "DD/MM/YYYY",
+                    },
+                  }}
                 />
               </div>
               <div className="form-group col-sm-3 col-xs-6">
@@ -399,7 +420,7 @@ export default class Reports_v2 extends PureComponent {
             </div>
           </div>
         </div>
-        {this.state.report && <Reportsv2 {...this.state.report}/>}
+        {this.state.report && <Reportsv2 {...this.state.report} />}
         {!this.state.report && (
           <div className="mgt-10 overview po-r text-center">
             Vui lòng chọn chương trình cần xem thống kê

@@ -2376,3 +2376,13 @@ nav.box-selected.navbar-static-top>.select2>.selection .select2-selection__arrow
 .box-relative .detail {
     display: none;
 }
+
+.navbar-link {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.navbar-link .caret {
+    display: none;
+}

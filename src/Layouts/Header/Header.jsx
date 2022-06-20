@@ -1,12 +1,14 @@
 import React, { PureComponent } from "react";
 import Logo from "../../Assets/Images/dng-logo.svg";
+import Dotmenu from "../../Assets/Images/dotmenu.svg";
 import Select2 from "../../Components/Select2/Select2";
+import { Dropdown, MenuItem } from "react-bootstrap";
 export default class Header extends PureComponent {
   constructor(props) {
     super(props);
   }
-  componentDidMount(){}
-  componentWillUnmount(){}
+  componentDidMount() {}
+  componentWillUnmount() {}
   render() {
     return (
       <header className="main-header">
@@ -103,12 +105,12 @@ export default class Header extends PureComponent {
                   </li>
                 </ul>
               </li>
-              <li
-                className="dropdown"
+              <Dropdown
+                componentClass="li"
                 style={{ paddingTop: "13px", paddingBottom: "13px" }}
               >
-                <button
-                  className="btn-default dropdown-toggle lang-toggle"
+                <Dropdown.Toggle
+                  className="lang-toggle"
                   style={{
                     width: "auto",
                     height: "auto",
@@ -128,8 +130,8 @@ export default class Header extends PureComponent {
                     style={{ width: "20px", height: "auto" }}
                     className="icon-status"
                   />
-                </button>
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
+                </Dropdown.Toggle>
+                <Dropdown.Menu aria-labelledby="dropdownMenu1">
                   <li>
                     <a href="#" style={{ color: "#777" }}>
                       Việt Nam
@@ -140,8 +142,8 @@ export default class Header extends PureComponent {
                       English
                     </a>
                   </li>
-                </ul>
-              </li>
+                </Dropdown.Menu>
+              </Dropdown>
               <li
                 className="dropdown notifications-menu"
                 style={{ position: "relative" }}
@@ -177,14 +179,15 @@ export default class Header extends PureComponent {
                   </div>
                 </div>
               </li>
-              <li className="dropdown user user-menu" id="user-menu">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                  <img
-                    src="http://localhost/crm-dng/assets/images/dotmenu.svg"
-                    style={{ width: "19px" }}
-                  />
-                </a>
-                <ul
+              <Dropdown
+                componentClass="li"
+                className="user user-menu"
+                id="user-menu"
+              >
+                <Dropdown.Toggle componentClass="a" className="navbar-link">
+                  <img src={Dotmenu} style={{ width: "19px" }} />
+                </Dropdown.Toggle>
+                <Dropdown.Menu
                   className="dropdown-menu icon-group"
                   style={{ width: "350px" }}
                 >
@@ -295,8 +298,8 @@ export default class Header extends PureComponent {
                       Đăng xuất
                     </a>
                   </li>
-                </ul>
-              </li>
+                </Dropdown.Menu>
+              </Dropdown>
             </ul>
           </div>
         </nav>
