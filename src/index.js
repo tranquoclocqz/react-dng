@@ -6,15 +6,17 @@ import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
+import { createStore } from "redux";
+import rootReducer from "./Redux/Reducers/rootReducer";
+const store = createStore(rootReducer);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <Provider store={store}>
     <BrowserRouter>
-      <div className="main-wrapper skin-green">
-        <div className="wrapper">
-          <App />
-        </div>
-      </div>
+      <App />
     </BrowserRouter>
+  </Provider>
 );
 reportWebVitals();
