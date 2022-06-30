@@ -558,4 +558,4 @@ function Reportsv2({
   );
 }
 
-export default React.memo(Reportsv2);
+export default Reportsv2;

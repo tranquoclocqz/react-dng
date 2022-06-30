@@ -70,4 +70,4 @@ function ReportPG({ rows }) {
     </div>
   );
 }
-export default React.memo(ReportPG);
+export default ReportPG;
