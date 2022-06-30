@@ -3,17 +3,21 @@ import "../../Assets/Styles/marketing_offlines/reports.css";
 import AdvancedMenu from "./Components/AdvancedMenu";
 import Select2 from "../../Components/Select2/Select2";
 import debounce from "lodash/debounce";
-import Reportsv2 from "./Components/Reportsv2";
 import Daterangpicker from "../../Components/Daterangepicker/Daterangpicker";
 import { formatDate } from "../../Hooks";
 import { useRef, useState, useEffect } from "react";
 import MarketingOffline from "../../Api/MarketingOffline";
+import ReportPG from "./Components/ReportPG";
+import moment from "moment";
 
 export default function Reports_v2() {
   const [filter, setFilter] = useState({});
   const [campaignSelected, setCampaignSelected] = useState({ id: 0, name: "" });
   const [locationSelected, setLocationSelected] = useState({ id: 0, name: "" });
-  const [date, setDate] = useState({});
+  const [date, setDate] = useState({
+    start_date: moment().startOf("month").format("DD/MM/YYYY"),
+    end_date: moment().format("DD/MM/YYYY"),
+  });
   const [channelId, setChannelId] = useState(0);
   const [report, setReport] = useState([]);
   const showCampaign = useRef();
@@ -23,6 +27,7 @@ export default function Reports_v2() {
     getLocation();
     getCampaign();
     getParnter();
+    getReport();
     document.addEventListener(`click`, clickOutSide);
     return () => {
       document.removeEventListener(`click`, clickOutSide);
@@ -162,14 +167,13 @@ export default function Reports_v2() {
   };
 
   const getReport = () => {
-    MarketingOffline.getReportMarketing({
+    MarketingOffline.getReportPG({
       campaign_id: campaignSelected.id,
       campaign_name: campaignSelected.name,
       channel_id: channelId,
       date: `${date.start_date} - ${date.end_date}`,
-      import_id: "23",
+      import_id: "0",
       location_id: locationSelected.id,
-      location_name: locationSelected.name,
     }).then((response) => {
       setReport(response.data);
     });
@@ -186,11 +190,6 @@ export default function Reports_v2() {
                 <Daterangpicker
                   className="form-control"
                   disabled={Object.keys(date).length === 0 ? "disabled" : false}
-                  value={
-                    Object.keys(date).length !== 0
-                      ? `${date.start_date} - ${date.end_date}`
-                      : ""
-                  }
                   placeholder="Thời gian chương trình"
                   options={{
                     opens: "right",
@@ -368,22 +367,28 @@ export default function Reports_v2() {
               </Select2>
             </div>
             <div className="form-group col-sm-1 col-xs-6">
-              <button
-                className="btn btn-primary btn submit-btn pointer btn-block"
-                onClick={() => getReport()}
-              >
-                <i className="fa fa-search" aria-hidden="true"></i>
-              </button>
+              <div className="input-group form-serch-submit d-flex-bw">
+                <button
+                  title="Tìm kiếm"
+                  type="submit"
+                  className="btn-primary btn submit-btn pointer"
+                  onClick={() => getReport()}
+                >
+                  <i className="fa fa-search" aria-hidden="true"></i>
+                </button>
+                <a
+                  title="Xem báo cáo tư vấn viên"
+                  href="sale_care/report?source_id=[31]&amp;source_view=true"
+                  className="btn btn-sm btn-info pointer"
+                >
+                  <i className="fa fa-line-chart" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {report.length !== 0 && <Reportsv2 {...report} />}
-      {report.length === 0 && (
-        <div className="mgt-10 overview po-r text-center">
-          Vui lòng chọn chương trình cần xem thống kê
-        </div>
-      )}
+      <ReportPG rows={report} />
     </>
   );
 }

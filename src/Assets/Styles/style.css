@@ -2386,3 +2386,17 @@ nav.box-selected.navbar-static-top>.select2>.selection .select2-selection__arrow
 .navbar-link .caret {
     display: none;
 }
+
+#dropdown-language {
+    padding: 0;
+    width: 34px;
+    height: 24px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+}
+
+#dropdown-language .caret {
+    display: none;
+}

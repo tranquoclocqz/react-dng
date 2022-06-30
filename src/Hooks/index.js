@@ -6,9 +6,10 @@ function formatDate(date, format = "DD/MM/YYYY") {
 }
 
 function formatNumber(number, decimal = 0, locale = 'vi-VN') {
-    return number.toLocaleString(locale, {
-        minimumFractionDigits: decimal
-    })
+    return Number(number).toFixed(decimal);
+    // return number.toLocaleString(locale, {
+    //     minimumFractionDigits: decimal
+    // })
 }
 
 function getMoney(val) {

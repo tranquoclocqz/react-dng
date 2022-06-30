@@ -1,5 +1,6 @@
 import { PureComponent } from "react";
 import { Link } from "react-router-dom";
+import routes from "../../Pages/routes";
 export default class Sidebar extends PureComponent {
   render() {
     return (
@@ -31,11 +32,17 @@ export default class Sidebar extends PureComponent {
                 <i className="fa fa-home"></i>Home
               </Link>
             </li>
-            <li>
-              <Link to="/marketing_offlines/reports_v2">
-                <i className="fa fa-home"></i>marketing_offlines/reports_v2
-              </Link>
-            </li>
+            {routes &&
+              routes.map((e) => {
+                return (
+                  <li key={e.path}>
+                    <Link to={e.path}>
+                      <i className="fa fa-home"></i>
+                      {e.path}
+                    </Link>
+                  </li>
+                );
+              })}
           </ul>
         </section>
       </aside>

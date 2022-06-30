@@ -107,20 +107,12 @@ export default function Header() {
               </ul>
             </li>
             <Dropdown
-            id="dropdown-header-1"
+            id="dropdown-language"
               componentClass="li"
               style={{ paddingTop: "13px", paddingBottom: "13px" }}
             >
               <Dropdown.Toggle
                 className="lang-toggle"
-                style={{
-                  width: "auto",
-                  height: "auto",
-                  border: "1px solid white",
-                  borderRadius: "5px",
-                  background: "none",
-                  textAlign: "center",
-                }}
                 type="button"
                 id="dropdownMenu1"
                 data-toggle="dropdown"

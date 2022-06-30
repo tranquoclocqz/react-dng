@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { Fragment, Suspense, useEffect } from "react";
+import React, { Fragment, Suspense } from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./Layouts/Footer/Footer";
@@ -10,7 +10,6 @@ import Home from "./Pages/Home";
 import router from "./Pages/routes";
 function App() {
   const openMenu = useSelector((state) => state.dng.openMenu);
-  useEffect(() => {}, []);
   return (
     <div
       className={classNames("main-wrapper", "skin-green", {
