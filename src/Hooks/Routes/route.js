@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
+import Permission from "../../Api/Permission";
 
 function DNGRoute() {
-  const [dngRoute, setDngRoute] = useState([]);
-  useEffect(() => {
-    /**
-     * Call API get route available
-     */
-    setDngRoute([
-      {
-        name: "reports_v2",
-        path: "/marketing_offlines/reports_v2",
-        component: "MarketingOffline/Reports_v2",
-      },
-    ]);
-  }, []);
-  return dngRoute;
+    const [dngRoute, setDngRoute] = useState([]);
+    useEffect(() => {
+        async function getMenu() {
+            const data = await Permission.getMenu();
+            setDngRoute(data.data);
+        }
+        getMenu();
+    }, []);
+    return dngRoute;
 }
 
 export default DNGRoute;

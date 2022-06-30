@@ -2400,3 +2400,40 @@ nav.box-selected.navbar-static-top>.select2>.selection .select2-selection__arrow
 #dropdown-language .caret {
     display: none;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.hide-scrollbar::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+    background-color: #ccc;
+}
+
+.hide-scrollbar::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+.hide-scrollbar::-webkit-scrollbar-corner {
+    background-color: #fff;
+}
+
+.hide-scrollbar::-webkit-resizer {
+    background-color: #666;
+}
+
+.sidebar {
+    max-height: calc(100vh - 51px);
+    overflow-y: auto !important
+}

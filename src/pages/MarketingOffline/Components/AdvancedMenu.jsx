@@ -1,6 +1,7 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import "../../../Assets/Styles/advanced_styles.css";
-export default function AdvancedMenu() {
+import React from "react";
+function AdvancedMenu() {
   const AdvancedLink = ({ children, to, ...props }) => {
     let resolved = useResolvedPath(to);
     let match = useMatch({ path: resolved.pathname, end: true });
@@ -27,3 +28,4 @@ export default function AdvancedMenu() {
     </ul>
   );
 }
+export default React.memo(AdvancedMenu);

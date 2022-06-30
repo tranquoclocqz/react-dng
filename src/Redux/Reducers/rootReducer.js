@@ -1,4 +1,10 @@
-import { combineReducers } from "redux";
+import {
+    combineReducers
+} from "redux";
 import dngReducer from "./dngReducer";
-const rootReducer = combineReducers({ dng: dngReducer })
+import menuReducer from "./menuReducer";
+const rootReducer = combineReducers({
+    dng: dngReducer,
+    menu: menuReducer
+})
 export default rootReducer;

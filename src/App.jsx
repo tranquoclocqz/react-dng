@@ -1,18 +1,50 @@
 import classNames from "classnames";
 import React, { Fragment, Suspense } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./Layouts/Footer/Footer";
 import Header from "./Layouts/Header/Header";
 import Sidebar from "./Layouts/Sidebar/Sidebar";
 import Error404 from "./Pages/Error/404";
 import Home from "./Pages/Home";
-import router from "./Pages/routes";
+import { setMenu } from "./Redux/Actions/menuAction";
+import { useEffect } from "react";
+import Permission from "./Api/Permission";
 function App() {
   const openMenu = useSelector((state) => state.dng.openMenu);
+  const menu = useSelector((state) => state.menu.menu);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    async function getMenu() {
+      const data = await Permission.getMenu();
+      const routes = data.data;
+      const array_route = routes.map((e) => {
+        let menu = {
+          name: e.name,
+          icon: e.icon,
+        };
+        if (typeof e.children === "undefined") {
+          menu.path = e.url;
+          menu.component = "MarketingOffline/Reports_v2";
+        } else {
+          menu.path = "#";
+          menu.children = e.children.map((child) => {
+            return {
+              name: child.name,
+              path: `/` + child.url,
+              component: "MarketingOffline/Reports_v2",
+            };
+          });
+        }
+        return menu;
+      });
+      dispatch(setMenu(array_route));
+    }
+    getMenu();
+  }, []);
   return (
     <div
-      className={classNames("main-wrapper", "skin-green", {
+      className={classNames("main-wrapper fixed", "skin-green", {
         "sidebar-collapse": openMenu,
       })}
     >
@@ -26,17 +58,32 @@ function App() {
                 <Routes>
                   <Route path="*" element={<Error404 />} />
                   <Route index path="/" element={<Home />} />
-                  {router.map((item) => {
-                    const Com = React.lazy(() =>
-                      import(`./Pages/${item.component}`)
-                    );
-                    return (
-                      <Route
-                        key={item.path}
-                        path={item.path}
-                        element={<Com />}
-                      />
-                    );
+                  {menu.map((item) => {
+                    if (typeof item.children === "undefined") {
+                      const Com = React.lazy(() =>
+                        import(`./Pages/${item.component}`)
+                      );
+                      return (
+                        <Route
+                          key={item.path}
+                          path={item.path}
+                          element={<Com />}
+                        />
+                      );
+                    } else {
+                      item.children.map((child) => {
+                        const ComChild = React.lazy(() =>
+                          import(`./Pages/${child.component}`)
+                        );
+                        return (
+                          <Route
+                            key={child.path}
+                            path={child.path}
+                            element={<ComChild />}
+                          />
+                        );
+                      });
+                    }
                   })}
                 </Routes>
               </Suspense>
