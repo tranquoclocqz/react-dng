@@ -7,9 +7,16 @@ import { setMenu } from "../../Redux/Actions/menuAction";
 import { useEffect } from "react";
 import Permission from "../../Api/Permission";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function Default({ children }) {
   const openMenu = useSelector((state) => state.dng.openMenu);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    if (!token) return navigate("/login");
+  }, []);
+
   useEffect(() => {
     async function getMenu() {
       const data = await Permission.getMenu();
@@ -45,7 +52,7 @@ function Default({ children }) {
         <Sidebar />
         <div className="content-wrapper">
           <Fragment>
-            <Suspense fallback={<h1>Loading profile...</h1>}>
+            <Suspense fallback={<>Loading profile...</>}>
               <section className="content">{children}</section>
             </Suspense>
           </Fragment>

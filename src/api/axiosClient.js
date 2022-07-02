@@ -4,7 +4,6 @@ const axiosClient = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     headers: {
         'content-type': 'application/json',
-        'token': '123'
     },
     withCredentials: true,
     paramsSerializer: params => queryString.stringify(params),
@@ -12,6 +11,7 @@ const axiosClient = axios.create({
 // Handle token
 axiosClient.interceptors.request.use(async(config) => {
     // Do something before request is sent
+    config.headers.token = '123';
     return config;
 }, (error) => {
     // Do something with request error
