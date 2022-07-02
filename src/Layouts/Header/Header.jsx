@@ -1,10 +1,9 @@
 import React from "react";
-import Logo from "../../Assets/Images/dng-logo.svg";
-import Dotmenu from "../../Assets/Images/dotmenu.svg";
 import Select2 from "../../Components/Select2/Select2";
 import { Dropdown } from "react-bootstrap";
 import { toggleMenu } from "../../Redux/Actions/dngAction";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 export default function Header() {
   const openMenu = useSelector((state) => state.dng.openMenu);
   const dispatch = useDispatch();
@@ -15,13 +14,9 @@ export default function Header() {
 
   return (
     <header className="main-header">
-      <a
-        href="http://localhost/crm-dng/"
-        className="logo"
-        style={{ background: "white" }}
-      >
-        <img src={Logo} width="165px" />
-      </a>
+      <Link to="/" className="logo" style={{ background: "white" }}>
+        <img src="/images/dng-logo.svg" width="165px" />
+      </Link>
       <nav className="navbar navbar-static-top" role="navigation">
         <a
           href="#"
@@ -107,7 +102,7 @@ export default function Header() {
               </ul>
             </li>
             <Dropdown
-            id="dropdown-language"
+              id="dropdown-language"
               componentClass="li"
               style={{ paddingTop: "13px", paddingBottom: "13px" }}
             >
@@ -179,7 +174,7 @@ export default function Header() {
               id="dropdown-header-2"
             >
               <Dropdown.Toggle componentClass="a" className="navbar-link">
-                <img src={Dotmenu} style={{ width: "19px" }} />
+                <img src="/images/dotmenu.svg" style={{ width: "19px" }} />
               </Dropdown.Toggle>
               <Dropdown.Menu
                 className="dropdown-menu icon-group"
