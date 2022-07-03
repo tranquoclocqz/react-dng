@@ -1,10 +1,9 @@
 import axios from 'axios';
 import queryString from 'query-string';
 const axiosClientGo = axios.create({
-    baseURL: process.env.REACT_APP_API_URL_GO,
+    baseURL: process.env.REACT_APP_API_URL,
     headers: {
         'content-type': 'application/json',
-        'token': '123'
     },
     withCredentials: true,
     paramsSerializer: params => queryString.stringify(params),
@@ -12,6 +11,12 @@ const axiosClientGo = axios.create({
 // Handle token
 axiosClientGo.interceptors.request.use(async(config) => {
     // Do something before request is sent
+    // const {
+    //     token
+    // } = JSON.parse(localStorage.getItem("user"));
+    // if (token)
+    //     config.headers.token = token;
+    config.headers.token = 123;
     return config;
 }, (error) => {
     // Do something with request error
