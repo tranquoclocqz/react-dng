@@ -1,21 +1,19 @@
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Sidebar from "../Sidebar/Sidebar";
 import classNames from "classnames";
-import React, { Fragment, Suspense } from "react";
-import { setMenu } from "../../Redux/Actions/menuAction";
-import { useEffect } from "react";
+import { Fragment, Suspense, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  Navigate, useLocation
+} from "react-router-dom";
 import Permission from "../../Api/Permission";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { setMenu } from "../../Redux/Actions/menuAction";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import Sidebar from "../Sidebar/Sidebar";
 function Default({ children }) {
   const openMenu = useSelector((state) => state.dng.openMenu);
+  const { isAuth } = useSelector((state) => state.auth);
+  const location = useLocation();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
-  useEffect(() => {
-    if (!token) return navigate("/login");
-  }, []);
 
   useEffect(() => {
     async function getMenu() {
@@ -43,8 +41,12 @@ function Default({ children }) {
       });
       dispatch(setMenu(array_route));
     }
-    getMenu();
+    if (isAuth) {
+      getMenu();
+    }
   }, []);
+  if (!isAuth)
+    return <Navigate to="/login" state={{ from: location }} replace />;
   return (
     <div className={classNames("main-wrapper fixed skin-green")}>
       <div className="wrapper">
@@ -52,7 +54,7 @@ function Default({ children }) {
         <Sidebar />
         <div className="content-wrapper">
           <Fragment>
-            <Suspense fallback={<>Loading profile...</>}>
+            <Suspense fallback={<>Loading ............</>}>
               <section className="content">{children}</section>
             </Suspense>
           </Fragment>

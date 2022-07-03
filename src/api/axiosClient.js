@@ -11,7 +11,12 @@ const axiosClient = axios.create({
 // Handle token
 axiosClient.interceptors.request.use(async(config) => {
     // Do something before request is sent
-    config.headers.token = '123';
+    // const {
+    //     token
+    // } = JSON.parse(localStorage.getItem("user"));
+    // if (token)
+    //     config.headers.token = token;
+    config.headers.token = 123;
     return config;
 }, (error) => {
     // Do something with request error

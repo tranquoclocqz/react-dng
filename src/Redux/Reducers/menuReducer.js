@@ -1,7 +1,6 @@
 const initState = {
     menu: []
 }
-
 const menuReducer = (state = initState, action) => {
     switch (action.type) {
         case 'SET_MENU':

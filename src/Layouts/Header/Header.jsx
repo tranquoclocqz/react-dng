@@ -5,6 +5,7 @@ import { toggleMenu } from "../../Redux/Actions/dngAction";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 export default function Header() {
+  const { user } = useSelector(state => state.auth);
   const openMenu = useSelector((state) => state.dng.openMenu);
   const dispatch = useDispatch();
   const handleOpenMenu = () => {
@@ -194,7 +195,7 @@ export default function Header() {
                     >
                       <div className="fl">
                         <img
-                          src="https://files.diemnhangroup.com/dev/avatars/2022/05/4a3e9f_1653705692.jpg"
+                          src={user.image_url}
                           style={{ borderRadius: "50%" }}
                           alt="Hinh dai dien"
                         />

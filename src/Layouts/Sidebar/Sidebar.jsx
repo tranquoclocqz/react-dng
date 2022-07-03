@@ -3,7 +3,8 @@ import classNames from "classnames";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import $ from "jquery";
-export default function Sidebar() {
+function Sidebar() {
+  const { user } = useSelector(state => state.auth);
   const menu = useSelector((state) => state.menu.menu);
   const ListItem = React.memo(({ children, to, classMatch = {}, ...props }) => {
     let resolved = useResolvedPath(to);
@@ -95,7 +96,7 @@ export default function Sidebar() {
             <div className="row pull-right">
               <div className="col-xs-4">
                 <img
-                  src="https://files.diemnhangroup.com/dev/avatars/2022/05/4a3e9f_1653705692.jpg"
+                  src={user.image_url}
                   height="50px"
                   width="50px"
                   style={{ objectFit: "cover" }}
@@ -103,7 +104,7 @@ export default function Sidebar() {
               </div>
               <div className="col-xs-8" style={{ marginTop: ".5em" }}>
                 <a href="panel/account">
-                  <p>Quốc Lộc</p>
+                  <p>{user.first_name}</p>
                   <i className="fa fa-circle text-success"></i> Online
                 </a>
               </div>
@@ -115,3 +116,5 @@ export default function Sidebar() {
     </aside>
   );
 }
+
+export default React.memo(Sidebar);

@@ -1,7 +1,35 @@
 import "../../Assets/Styles/Login.css";
 import "../../Assets/Styles/adminlte.min.css";
-import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import Auth from "../../Api/Auth";
+import { useDispatch, useSelector } from "react-redux";
+import { loginSuccess } from "../../Redux/Actions/authAction";
+import { useNavigate } from "react-router-dom";
 function Login() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isAuth, user } = useSelector((state) => state.auth);
+  const onSubmit = (data) => {
+    Auth.login(data).then((response) => {
+      if (response.status == 1) {
+        let user = response.data.user;
+        user.main_group_id = response.data.main_group_id;
+        user.permissions = response.data.permissions;
+        user.refresh_token = response.data.refresh_token;
+        user.token = response.data.token;
+        dispatch(loginSuccess(user));
+        navigate("/", { replace: true });
+      } else {
+        alert(response.message);
+      }
+    });
+  };
   return (
     <div className="login-page">
       <div className="login-box">
@@ -11,10 +39,9 @@ function Login() {
         <div className="login-box-body">
           <p className="login-box-msg">Đăng nhập hệ thống</p>
           <form
-            action="http://localhost/crm-dng/login"
             method="post"
             acceptCharset="utf-8"
-            className="ng-pristine ng-valid"
+            onSubmit={handleSubmit(onSubmit)}
           >
             <div className="form-group">
               <label htmlFor="username">Tài khoản</label>
@@ -23,6 +50,7 @@ function Login() {
                 name="username"
                 id="username"
                 className="form-control"
+                {...register("username")}
               />
             </div>{" "}
             <div className="form-group">
@@ -32,6 +60,7 @@ function Login() {
                 name="password"
                 id="password"
                 className="form-control"
+                {...register("password")}
               />
             </div>
             <input
@@ -53,6 +82,7 @@ function Login() {
                       name="remember"
                       value="1"
                       className="icheck-blue"
+                      {...register("remember")}
                     />
                     <ins className="iCheck-helper"></ins>
                   </div>{" "}
