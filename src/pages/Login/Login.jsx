@@ -1,10 +1,9 @@
-import "../../Assets/Styles/Login.css";
-import "../../Assets/Styles/adminlte.min.css";
 import { useForm } from "react-hook-form";
-import Auth from "../../Api/Auth";
 import { useDispatch, useSelector } from "react-redux";
-import { loginSuccess } from "../../Redux/Actions/authAction";
 import { useNavigate } from "react-router-dom";
+import Auth from "../../Api/Auth";
+import "../../Assets/Styles/Login.css";
+import { loginSuccess } from "../../Redux/Actions/authAction";
 function Login() {
   const {
     register,
@@ -30,6 +29,10 @@ function Login() {
       }
     });
   };
+  useEffect(() => {
+    if (isAuth) navigate("/", { replace: true });
+  }, []);
+
   return (
     <div className="login-page">
       <div className="login-box">
