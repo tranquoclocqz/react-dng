@@ -18,11 +18,24 @@ export default class Select2 extends PureComponent {
       });
     }
   }
+  componentDidUpdate(prevProps) {
+    if (prevProps.children !== this.props.children) {
+      console.log(`updated`);
+      $(this.select2.current).change();
+    }
+  }
   componentWillUnmount() {
     $(this.select2.current).select2("destroy");
   }
   render() {
-    return <select ref={this.select2}>{this.props.children}</select>;
+    const { ...attributes } = this.props;
+    delete attributes.ref;
+    delete attributes.children;
+    return (
+      <select ref={this.select2} {...attributes}>
+        {this.props.children}
+      </select>
+    );
   }
 }
 

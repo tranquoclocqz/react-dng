@@ -1,5 +1,6 @@
 const initState = {
-    menu: []
+    menu: [],
+    stores: []
 }
 const menuReducer = (state = initState, action) => {
     switch (action.type) {
@@ -8,6 +9,11 @@ const menuReducer = (state = initState, action) => {
                 ...state,
                 menu: action.payload
             };
+        case 'SET_STORE':
+            return {
+                ...state,
+                stores: action.payload
+            }
         default:
             return state;
     }

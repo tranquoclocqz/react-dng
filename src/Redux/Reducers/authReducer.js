@@ -18,6 +18,8 @@ export default (state = {
             }
         case 'LOGOUT':
             localStorage.removeItem("user");
+            localStorage.removeItem("storeId");
+            localStorage.removeItem("companyId");
             return {
                 ...state,
                 isAuth: false,

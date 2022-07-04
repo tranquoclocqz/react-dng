@@ -5,4 +5,11 @@ const setMenu = (value) => {
     }
 }
 
-export { setMenu };
+const setStore = (value) => {
+    return {
+        type: 'SET_STORE',
+        payload: value
+    }
+}
+
+export { setMenu, setStore };

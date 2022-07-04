@@ -1,21 +1,36 @@
 import classNames from "classnames";
 import { Fragment, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Navigate, useLocation
-} from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import Permission from "../../Api/Permission";
-import { setMenu } from "../../Redux/Actions/menuAction";
+import Store from "../../Api/Store";
+import { setMenu, setStore } from "../../Redux/Actions/menuAction";
+import { setStoreId } from "../../Redux/Actions/dngAction";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 function Default({ children }) {
   const openMenu = useSelector((state) => state.dng.openMenu);
-  const { isAuth } = useSelector((state) => state.auth);
+  const { isAuth, user } = useSelector((state) => state.auth);
   const location = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
+    async function getStore() {
+      const data = await Store.getStore({ user_id: user.id });
+      dispatch(setStore(data.data));
+      if (data.data.length == 1) {
+        dispatch(setStoreId(data.data[0].id));
+      } else {
+        const pluckId = data.data.map((e) => {
+          return e.id;
+        });
+        if (!pluckId.includes(user.main_store_id)) {
+          dispatch(setStoreId(pluckId[0]));
+        }
+      }
+    }
+
     async function getMenu() {
       const data = await Permission.getMenu();
       const routes = data.data;
@@ -42,7 +57,8 @@ function Default({ children }) {
       dispatch(setMenu(array_route));
     }
     if (isAuth) {
-      getMenu();
+      // getMenu();
+      getStore();
     }
   }, []);
   if (!isAuth)

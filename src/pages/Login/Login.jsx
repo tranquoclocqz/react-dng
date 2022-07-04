@@ -4,17 +4,17 @@ import { useNavigate } from "react-router-dom";
 import Auth from "../../Api/Auth";
 import "../../Assets/Styles/Login.css";
 import { loginSuccess } from "../../Redux/Actions/authAction";
+import { setCompnayId, setStoreId } from "../../Redux/Actions/dngAction";
+import React, { useEffect, useState } from "react";
 function Login() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, setFocus } = useForm();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const { isAuth } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isAuth, user } = useSelector((state) => state.auth);
   const onSubmit = (data) => {
+    setLoading(true);
     Auth.login(data).then((response) => {
       if (response.status == 1) {
         let user = response.data.user;
@@ -23,10 +23,14 @@ function Login() {
         user.refresh_token = response.data.refresh_token;
         user.token = response.data.token;
         dispatch(loginSuccess(user));
+        dispatch(setCompnayId(1));
+        dispatch(setStoreId(user.main_store_id));
         navigate("/", { replace: true });
       } else {
-        alert(response.message);
+        setError(response.message);
+        setFocus("password", { shouldSelect: true });
       }
+      setLoading(false);
     });
   };
   useEffect(() => {
@@ -46,6 +50,13 @@ function Login() {
             acceptCharset="utf-8"
             onSubmit={handleSubmit(onSubmit)}
           >
+            {error && (
+              <div className="alert alert-danger" role="alert">
+                <p></p>
+                <p>{error}</p>
+                <p></p>
+              </div>
+            )}
             <div className="form-group">
               <label htmlFor="username">Tài khoản</label>
               <input
@@ -96,8 +107,9 @@ function Login() {
                 <button
                   type="submit"
                   className="btn btn-primary btn-block btn-flat"
+                  disabled={loading}
                 >
-                  Đăng nhập
+                  {!loading ? "Đăng nhập" : "Đang đăng nhập"}
                 </button>
               </div>
             </div>

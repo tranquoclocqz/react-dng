@@ -1,4 +1,8 @@
 import moment from "moment";
+// import React, {
+//     useRef,
+//     useEffect
+// } from "React"
 
 function formatDate(date, format = "DD/MM/YYYY") {
     return moment(date).format(format);
@@ -19,8 +23,16 @@ function getMoney(val) {
     }
 }
 
+// function usePrevious(value) {
+//     const ref = useRef();
+//     useEffect(() => {
+//         ref.current = value;
+//     });
+//     return ref.current;
+// }
 export {
     formatDate,
     formatNumber,
     getMoney,
+    // usePrevious
 };

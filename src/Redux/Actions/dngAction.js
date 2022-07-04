@@ -5,4 +5,22 @@ const toggleMenu = (value) => {
     }
 }
 
-export { toggleMenu };
+const setStoreId = (value) => {
+    return {
+        type: 'SET_STORE_ID',
+        payload: value
+    }
+}
+
+const setCompnayId = (value) => {
+    return {
+        type: 'SET_COMPANY_ID',
+        payload: value
+    }
+}
+
+export {
+    toggleMenu,
+    setStoreId,
+    setCompnayId
+};
