@@ -91,8 +91,8 @@ function Sidebar() {
   return (
     <aside className="main-sidebar">
       <section className="sidebar hide-scrollbar style-3">
-        <div className="user-panel" style={{ height: "65px" }}>
-          <div className="pull-left info" style={{ left: "5px" }}>
+        <div className="user-panel">
+          <div className="pull-left info">
             <div className="row pull-right">
               <div className="col-xs-4">
                 <img

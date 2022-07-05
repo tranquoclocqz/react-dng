@@ -2439,6 +2439,14 @@ nav.box-selected.navbar-static-top>.select2>.selection .select2-selection__arrow
     overflow-y: auto !important
 }
 
+.user-panel {
+    height: 65px;
+}
+
+.user-panel .info {
+    left: 5px;
+}
+
 @media (max-width: 767px) {
     .fixed .main-header {
         position: relative;
@@ -2469,5 +2477,8 @@ nav.box-selected.navbar-static-top>.select2>.selection .select2-selection__arrow
     }
     .main-sidebar {
         padding-top: 0;
+    }
+    .sidebar {
+        max-height: 100vh;
     }
 }

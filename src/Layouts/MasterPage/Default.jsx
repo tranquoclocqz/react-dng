@@ -16,22 +16,8 @@ function Default({ children }) {
   const location = useLocation();
   const dispatch = useDispatch();
   const onResizeFunction = () => {
-    console.log("resized");
-    if (window.innerWidth < 768) {
-      dispatch(toggleMenu(true));
-    } else {
-      dispatch(toggleMenu(false));
-    }
+    dispatch(toggleMenu(window.innerWidth < 768));
   };
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      dispatch(toggleMenu(true));
-    }
-    window.addEventListener("resize", onResizeFunction, false);
-    return () => {
-      window.removeEventListener("resize", onResizeFunction, false);
-    };
-  }, []);
   useEffect(() => {
     async function getStore() {
       const data = await Store.getStore({
@@ -84,6 +70,13 @@ function Default({ children }) {
       getMenu();
       getStore();
     }
+    if (window.innerWidth < 768) {
+      dispatch(toggleMenu(true));
+    }
+    window.addEventListener("resize", onResizeFunction, false);
+    return () => {
+      window.removeEventListener("resize", onResizeFunction, false);
+    };
   }, []);
   if (!isAuth)
     return <Navigate to="/login" state={{ from: location }} replace />;

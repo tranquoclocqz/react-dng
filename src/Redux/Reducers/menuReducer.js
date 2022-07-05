@@ -1,8 +1,7 @@
-const initState = {
+export default (state = {
     menu: [],
     stores: []
-}
-const menuReducer = (state = initState, action) => {
+}, action) => {
     switch (action.type) {
         case 'SET_MENU':
             return {
@@ -19,4 +18,3 @@ const menuReducer = (state = initState, action) => {
     }
 
 }
-export default menuReducer;
