@@ -9,12 +9,29 @@ import { setStoreId } from "../../Redux/Actions/dngAction";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
+import { toggleMenu } from "../../Redux/Actions/dngAction";
 function Default({ children }) {
-  const openMenu = useSelector((state) => state.dng.openMenu);
   const { isAuth, user } = useSelector((state) => state.auth);
-  const { dng } = useSelector((state) => state.dng);
+  const { dng, openMenu } = useSelector((state) => state.dng);
   const location = useLocation();
   const dispatch = useDispatch();
+  const onResizeFunction = () => {
+    console.log("resized");
+    if (window.innerWidth < 768) {
+      dispatch(toggleMenu(true));
+    } else {
+      dispatch(toggleMenu(false));
+    }
+  };
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      dispatch(toggleMenu(true));
+    }
+    window.addEventListener("resize", onResizeFunction, false);
+    return () => {
+      window.removeEventListener("resize", onResizeFunction, false);
+    };
+  }, []);
   useEffect(() => {
     async function getStore() {
       const data = await Store.getStore({
@@ -71,7 +88,11 @@ function Default({ children }) {
   if (!isAuth)
     return <Navigate to="/login" state={{ from: location }} replace />;
   return (
-    <div className={classNames("main-wrapper fixed skin-green")}>
+    <div
+      className={classNames("main-wrapper fixed skin-green", {
+        "sidebar-collapse": openMenu,
+      })}
+    >
       <div className="wrapper">
         <Header />
         <Sidebar />

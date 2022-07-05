@@ -2438,3 +2438,36 @@ nav.box-selected.navbar-static-top>.select2>.selection .select2-selection__arrow
     max-height: calc(100vh - 51px);
     overflow-y: auto !important
 }
+
+@media (max-width: 767px) {
+    .fixed .main-header {
+        position: relative;
+    }
+    .fixed .content-wrapper {
+        padding-top: 0;
+    }
+    .sidebar-collapse .left-side,
+    .sidebar-collapse .main-sidebar {
+        transform: translate(-230px, 0);
+    }
+    .left-side,
+    .main-sidebar {
+        transform: translate(0, 0);
+    }
+    .sidebar-collapse .content-wrapper {
+        margin-left: 0;
+    }
+    .content-wrapper {
+        margin-left: 230px;
+    }
+    .sidebar-collapse .main-header {
+        transform: translate(0, 0);
+    }
+    .main-header {
+        transform: translate(230px, 0);
+        transition: transform .3s ease-in-out, width .3s ease-in-out;
+    }
+    .main-sidebar {
+        padding-top: 0;
+    }
+}
