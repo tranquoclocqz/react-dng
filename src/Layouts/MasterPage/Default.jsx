@@ -12,12 +12,15 @@ import Sidebar from "../Sidebar/Sidebar";
 function Default({ children }) {
   const openMenu = useSelector((state) => state.dng.openMenu);
   const { isAuth, user } = useSelector((state) => state.auth);
+  const { dng } = useSelector((state) => state.dng);
   const location = useLocation();
   const dispatch = useDispatch();
-
   useEffect(() => {
     async function getStore() {
-      const data = await Store.getStore({ user_id: user.id });
+      const data = await Store.getStore({
+        user_id: user.id,
+        company_id: dng.companyId,
+      });
       dispatch(setStore(data.data));
       if (data.data.length == 1) {
         dispatch(setStoreId(data.data[0].id));
@@ -32,7 +35,11 @@ function Default({ children }) {
     }
 
     async function getMenu() {
-      const data = await Permission.getMenu();
+      const data = await Permission.getMenu({
+        company_id: dng.companyId,
+        store_id: dng.storeId,
+        module: dng.module,
+      });
       const routes = data.data;
       const array_route = routes.map((e) => {
         let menu = {
@@ -57,7 +64,7 @@ function Default({ children }) {
       dispatch(setMenu(array_route));
     }
     if (isAuth) {
-      // getMenu();
+      getMenu();
       getStore();
     }
   }, []);

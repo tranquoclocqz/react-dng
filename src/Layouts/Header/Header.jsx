@@ -8,7 +8,7 @@ import { logout } from "../../Redux/Actions/authAction";
 export default function Header() {
   const { user } = useSelector((state) => state.auth);
   const { stores } = useSelector((state) => state.menu);
-  const { storeId, openMenu } = useSelector((state) => state.dng);
+  const { dng, openMenu } = useSelector((state) => state.dng);
   const dispatch = useDispatch();
   const handleOpenMenu = () => {
     const action = toggleMenu(!openMenu);
@@ -54,11 +54,11 @@ export default function Header() {
                 return {
                   id: e.id,
                   text: e.id + `: ` + e.store_name,
-                  selected: e.id == storeId,
+                  selected: e.id == dng.storeId,
                 };
               }),
             }}
-            defaultValue={storeId}
+            defaultValue={dng.storeId}
             onChange={(e) => {
               handleSetStoreId(e);
             }}

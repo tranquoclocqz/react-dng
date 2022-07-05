@@ -18,9 +18,16 @@ const setCompnayId = (value) => {
         payload: value
     }
 }
+const setModule = (value) => {
+    return {
+        type: 'SET_MODULE',
+        payload: value
+    }
+}
 
 export {
     toggleMenu,
     setStoreId,
-    setCompnayId
+    setCompnayId,
+    setModule
 };
