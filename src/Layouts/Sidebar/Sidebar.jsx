@@ -4,9 +4,9 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import $ from "jquery";
 function Sidebar() {
-  const { user } = useSelector(state => state.auth);
+  const { user } = useSelector((state) => state.auth);
   const menu = useSelector((state) => state.menu.menu);
-  const ListItem = React.memo(({ children, to, classMatch = {}, ...props }) => {
+  const ListItem = ({ children, to, classMatch = {}, ...props }) => {
     let resolved = useResolvedPath(to);
     let match = useMatch({ path: resolved.pathname, end: true });
     return (
@@ -19,39 +19,35 @@ function Sidebar() {
         {to == "#" && children}
       </li>
     );
-  });
+  };
 
   useEffect(() => {
-    (function () {
-      var o = 500;
-      $(document)
-        .off("click", "ul.sidebar-menu li a")
-        .on("click", "ul.sidebar-menu li a", function (e) {
-          var n = $(this),
-            t = n.next();
-          if (
-            t.is(".treeview-menu") &&
-            t.is(":visible") &&
-            !$("body").hasClass("sidebar-collapse")
-          )
-            t.slideUp(o, function () {
-              t.removeClass("menu-open");
-            }),
-              t.parent("li").removeClass("active");
-          else if (t.is(".treeview-menu") && !t.is(":visible")) {
-            var s = n.parents("ul").first(),
-              a = s.find("ul:visible").slideUp(o);
+    $(document)
+      .off("click", "ul.sidebar-menu li a")
+      .on("click", "ul.sidebar-menu li a", function (c) {
+        var b = $(this),
+          a = b.next();
+        if (
+          a.is(".treeview-menu") &&
+          a.is(":visible") &&
+          !$("body").hasClass("sidebar-collapse")
+        )
+          a.slideUp(500, function () {
             a.removeClass("menu-open");
-            var r = n.parent("li");
-            t.slideDown(o, function () {
-              t.addClass("menu-open"),
-                s.find("li.active").removeClass("active"),
-                r.addClass("active");
-            });
-          }
-          e.preventDefault();
-        });
-    })();
+          }),
+            a.parent("li").removeClass("active");
+        else if (a.is(".treeview-menu") && !a.is(":visible")) {
+          var d = b.parents("ul").first();
+          d.find("ul:visible").slideUp(500).removeClass("menu-open");
+          var e = b.parent("li");
+          a.slideDown(500, function () {
+            a.addClass("menu-open"),
+              d.find("li.active").removeClass("active"),
+              e.addClass("active");
+          });
+        }
+        c.preventDefault();
+      });
   }, []);
 
   const renderMenu = menu.map((e, i) => {

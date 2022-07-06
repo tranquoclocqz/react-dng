@@ -1,22 +1,21 @@
 import $ from "jquery";
-import "../../Assets/plugins/daterangepicker/daterangepicker.css";
-import "../../Assets/plugins/daterangepicker/daterangepicker.js";
 import moment from "moment";
 import PropTypes from "prop-types";
-import { PureComponent, createRef } from "react";
+import { PureComponent } from "react";
+import "../../Assets/plugins/daterangepicker/daterangepicker.css";
+import "../../Assets/plugins/daterangepicker/daterangepicker.js";
 class Daterangpicker extends PureComponent {
   constructor(props) {
     super(props);
-    if (!this.props.innerRef) this.innerRef = createRef();
   }
   componentDidMount() {
-    $(this.innerRef.current).daterangepicker(this.props.options);
+    $(this.innerRef).daterangepicker(this.props.options);
   }
   componentWillUnmount() {
-    $(this.innerRef.current).daterangepicker("destroy");
+    $(this.innerRef).daterangepicker("destroy");
   }
   render() {
-    return <input ref={this.innerRef} type="text" {...this.props}/>;
+    return <input ref={el => this.innerRef = el} type="text" {...this.props}/>;
   }
 }
 export default Daterangpicker;

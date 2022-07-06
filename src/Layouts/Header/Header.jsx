@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import Select2 from "../../Components/Select2/Select2";
+import React from "react";
 import { Dropdown } from "react-bootstrap";
-import { setStoreId, toggleMenu } from "../../Redux/Actions/dngAction";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Select2 from "../../Components/Select2/Select2";
 import { logout } from "../../Redux/Actions/authAction";
-export default function Header() {
+import { setStoreId, toggleMenu } from "../../Redux/Actions/dngAction";
+function Header() {
   const { user } = useSelector((state) => state.auth);
   const { stores } = useSelector((state) => state.menu);
   const { dng, openMenu } = useSelector((state) => state.dng);
@@ -256,3 +256,4 @@ export default function Header() {
     </header>
   );
 }
+export default Header;
