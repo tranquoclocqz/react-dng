@@ -30,6 +30,7 @@ export default class Select2 extends PureComponent {
     const { ...attributes } = this.props;
     delete attributes.ref;
     delete attributes.children;
+    delete attributes.options;
     return (
       <select ref={el => this.select2 = el} {...attributes}>
         {this.props.children}

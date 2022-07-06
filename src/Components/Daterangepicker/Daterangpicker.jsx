@@ -15,7 +15,11 @@ class Daterangpicker extends PureComponent {
     $(this.innerRef).daterangepicker("destroy");
   }
   render() {
-    return <input ref={el => this.innerRef = el} type="text" {...this.props}/>;
+    const { ...attributes } = this.props;
+    delete attributes.ref;
+    delete attributes.children;
+    delete attributes.options;
+    return <input ref={el => this.innerRef = el} type="text" {...attributes}/>;
   }
 }
 export default Daterangpicker;
